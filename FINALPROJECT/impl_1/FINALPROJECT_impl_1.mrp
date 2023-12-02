@@ -1,0 +1,206 @@
+                         Lattice Mapping Report File
+Design:  top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:  High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
+Mapped on: Sat Dec  2 15:12:06 2023
+
+Design Information
+------------------
+
+Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc Z:/es4/final project
+     stuff/FINALPROJECT/constraint.pdc -o FINALPROJECT_impl_1_map.udb -mp
+     FINALPROJECT_impl_1.mrp -hierrpt -gui
+
+Design Summary
+--------------
+
+   Number of slice registers:  76 out of  5280 (1%)
+   Number of I/O registers:      1 out of   117 (1%)
+   Number of LUT4s:           256 out of  5280 (5%)
+      Number of logic LUT4s:             105
+      Number of inserted feedthru LUT4s:  11
+      Number of ripple logic:             70 (140 LUT4s)
+   Number of IO sites used:   10 out of 39 (26%)
+      Number of IO sites used for general PIO: 10
+      Number of IO sites used for I3C: 0 out of 2 (0%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for PIO+I3C: 10 out of 36 (28%)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
+       see TN1288 iCE40 LED Driver Usage Guide)
+      Number of IO sites used for PIO+I3C+OD+RGB: 10 out of 39 (26%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             0 out of 30 (0%)
+   Number of PLLs:             1 out of 1 (100%)
+   Number of Clocks:  3
+      Net VSYNC_c: 35 loads, 35 rising, 0 falling (Driver: Pin
+     vga_1.VSYNC_c_I_0/Q)
+      Net vga_clk: 15 loads, 15 rising, 0 falling (Driver: Pin
+     mypll_1.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net clk_c: 1 loads, 1 rising, 0 falling (Driver: Port clk)
+   Number of Clock Enables:  2
+      Net gravity_1.velocity_5__N_157: 6 loads, 6 SLICEs
+      Net vga_1.column_0__N_49: 6 loads, 6 SLICEs
+   Number of LSRs:  5
+      Net gravity_1.velocity_5__N_158: 6 loads, 6 SLICEs
+      Net vga_1.column_0__N_49: 6 loads, 6 SLICEs
+      Net vga_1.valid_N_174: 1 loads, 1 SLICEs
+      Net vga_1.column_0__N_50: 6 loads, 6 SLICEs
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net tower_1.towerxpos_1__N_68: 5 loads, 5 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net VCC_net: 38 loads
+      Net vga_1.column_0__N_49: 13 loads
+      Net tower_1.towerxpos_1__N_68: 9 loads
+      Net column[5]: 8 loads
+      Net column[6]: 8 loads
+      Net column[7]: 8 loads
+      Net column[8]: 8 loads
+      Net column[9]: 8 loads
+      Net tower_1.counter[9]: 8 loads
+      Net column[1]: 7 loads
+
+
+
+
+   Number of warnings:  4
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+WARNING <1026001> - map: Z:/es4/final project stuff/FINALPROJECT/constraint.pdc
+     (11) : No port matched 'button'.
+WARNING <1027013> - map: No port matched 'button'.
+WARNING <1014301> - map: Can't resolve object 'button' in constraint
+     'ldc_set_location -site {9} [get_ports button]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {9}
+     [get_ports button]'.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[2]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[3]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[1]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[4]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[5]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| VSYNC               | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| HSYNC               | OUTPUT    |           | O     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| output_freq         | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[0]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                    Page 2
+
+
+
+
+
+
+Removed logic
+-------------
+
+Block i1 was optimized away.
+
+PLL/DLL Summary
+---------------
+
+PLL 1:                                 Pin/Node Value
+  PLL Instance Name:                            mypll_1/lscc_pll_inst/u_PLL_B
+  Input Reference Clock:               PIN      clk_c
+  Output Clock(CoreA):                 PIN      output_freq_c
+  Output Clock(GlobalA):               NODE     vga_clk
+  Output Clock(CoreB):                          NONE
+  Output Clock(GlobalB):                        NONE
+  Feedback input:                      NODE     mypll_1.lscc_pll_inst.feedback_w
+  Internal Feedback output:            NODE     mypll_1.lscc_pll_inst.feedback_w
+  BYPASS signal:                                GND
+  LATCH signal:                                 GND
+  Lock Signal:                                  NONE
+  Input Clock Frequency (MHz):                  NA
+  Reference Divider:                            0
+  Feedback Divider:                             66
+  VCO Divider:                                  5
+  ENABLE_ICEGATE_PORTA:                         0
+  ENABLE_ICEGATE_PORTB:                         0
+  PLLOUT_SELECT_PORTA:                          GENCLK
+  PLLOUT_SELECT_PORTB:                          GENCLK
+  SHIFTREG_DIV_MODE:                            0
+  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
+  FDA_RELATIVE:                                 0
+  FEEDBACK_PATH:                                SIMPLE
+  DELAY_ADJUSTMENT_MODE_FEEDBACK:               FIXED
+  FDA_FEEDBACK:                                 0
+  FILTER_RANGE:                                 1
+  EXTERNAL_DIVIDE_FACTOR:                       NONE
+  TEST Mode:                                    0
+
+ASIC Components
+---------------
+
+Instance Name: vga_1/HSYNC_c_I_0
+         Type: IOLOGIC
+Instance Name: mypll_1/lscc_pll_inst/u_PLL_B
+         Type: PLL
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 13
+   Total number of constraints dropped: 1
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 59 MB
+
+                                    Page 3
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor
+     Corporation,  All rights reserved.

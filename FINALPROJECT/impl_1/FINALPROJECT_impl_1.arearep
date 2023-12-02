@@ -1,0 +1,73 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  76 of 5280 (1.439%)
+I/O cells:      10
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2        70          100.0
+                            FD1P3XZ        76          100.0
+                                 IB         1          100.0
+                              IOL_B         1          100.0
+                               LUT4       104          100.0
+                                 OB         9          100.0
+                              PLL_B         1          100.0
+SUB MODULES
+                            gravity         1
+                              mypll         1
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                        pattern_gen         1
+                              tower         1
+                                vga         1
+                              TOTAL       268
+----------------------------------------------------------------------
+Report for cell gravity.v1
+Instance Path : gravity_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        13           18.6
+                            FD1P3XZ        35           46.1
+                               LUT4         9            8.7
+                              TOTAL        57
+----------------------------------------------------------------------
+Report for cell vga.v1
+Instance Path : vga_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        12           17.1
+                            FD1P3XZ        22           28.9
+                              IOL_B         1          100.0
+                               LUT4        25           24.0
+                              TOTAL        60
+----------------------------------------------------------------------
+Report for cell mypll.v1
+Instance Path : mypll_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+SUB MODULES
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000").v1
+Instance Path : mypll_1.lscc_pll_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell pattern_gen.v1
+Instance Path : pattern_gen_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        21           30.0
+                               LUT4        53           51.0
+                              TOTAL        74
+----------------------------------------------------------------------
+Report for cell tower.v1
+Instance Path : tower_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        24           34.3
+                            FD1P3XZ        19           25.0
+                               LUT4        17           16.3
+                              TOTAL        60

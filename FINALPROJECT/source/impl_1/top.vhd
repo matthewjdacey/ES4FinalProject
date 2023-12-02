@@ -1,0 +1,126 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity top is
+	port(
+		clk : in std_logic;
+		output_freq : out std_logic;
+		HSYNC : out std_logic := '1';
+		VSYNC : out std_logic := '1';
+		rgb : out std_logic_vector(5 downto 0)
+	);
+end top;
+
+architecture synth of top is
+
+	component tower is 
+		port(
+			update : in std_logic;
+			towerxpos : out unsigned(9 downto 0);
+			towerypos : out unsigned(9 downto 0)
+		);
+	end component;
+	
+
+	component gravity is
+		port(
+		update: in std_logic;
+		reset: in std_logic;
+		jump: in std_logic;
+		position: out unsigned(9 downto 0)
+	);
+	end component;
+
+	component mypll is
+		port(
+			ref_clk_i: in std_logic;
+			rst_n_i: in std_logic;
+			outcore_o: out std_logic;
+			outglobal_o: out std_logic
+		);
+	end component;
+	
+	component vga is
+		port(
+			clk : in std_logic;
+			gameclk : out std_logic;
+			HSYNC : out std_logic := '1';
+			VSYNC : out std_logic := '1';
+			valid : out std_logic := '1';
+			r : out unsigned(9 downto 0);
+			c : out unsigned(9 downto 0)
+		);
+	end component;
+	
+	component pattern_gen is
+		port(
+			valid : in std_logic;
+			row : in unsigned(9 downto 0);
+			column : in unsigned(9 downto 0);
+			birdpos : in unsigned(9 downto 0);
+			towerxpos : in unsigned(9 downto 0);
+			towerypos :in unsigned(9 downto 0);
+			rgb : out std_logic_vector(5 downto 0)
+			
+		);
+	end component;
+	
+	signal gameclk : std_logic;
+	signal resetdisplay : std_logic := '1'; 
+	signal vga_clk : std_logic;
+	signal valid : std_logic;
+	signal row : unsigned (9 downto 0);
+	signal column : unsigned (9 downto 0);
+	signal towerxpos : unsigned (9 downto 0) := "1010110010";
+	signal towerypos : unsigned (9 downto 0 ) := "0011001000";
+	
+	signal birdpos : unsigned(9 downto 0);
+	
+begin
+	mypll_1 : mypll
+	port map(
+		ref_clk_i => clk,
+		rst_n_i => resetdisplay,
+		outcore_o => output_freq,
+		outglobal_o => vga_clk
+	);
+	
+	vga_1 : vga
+	port map(
+		clk => vga_clk,
+		gameclk => gameclk,
+		HSYNC => HSYNC,
+		VSYNC => VSYNC,
+		valid => valid,
+		r => row,
+		c => column
+	);
+	
+	gravity_1 : gravity
+	port map(
+		update => gameclk,
+		reset => '0',
+		jump => '0',
+		position => birdpos
+	);
+		
+	tower_1 : tower
+	port map(
+		update => gameclk,
+		towerxpos => towerxpos,
+		towerypos => towerypos
+	);
+	
+	pattern_gen_1 : pattern_gen 
+	port map(
+		valid => valid,
+		row => row,
+		column => column,
+		birdpos => birdpos,
+		towerxpos => towerxpos,
+		towerypos => towerypos,
+		rgb => rgb
+	);
+	
+end;
