@@ -1,7 +1,8 @@
 -ver "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
--lib "work" -vhd "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/gravity.vhd" "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/pattern_gen.vhd" "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/top.vhd" "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/vga.vhd" "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/tower.vhd"
--path "Z:/es4/final project stuff/FINALPROJECT"
+-lib "work" -vhd "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/gravity.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/pattern_gen.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/top.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/vga.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/tower.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/nes.vhd"
+-path "Z:/es4/ES4FinalProject/FINALPROJECT"
+-vh2008
 -top top
 -isTop
 -a "iCE40UP"

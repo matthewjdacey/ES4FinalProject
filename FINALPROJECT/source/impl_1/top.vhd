@@ -8,7 +8,11 @@ entity top is
 		output_freq : out std_logic;
 		HSYNC : out std_logic := '1';
 		VSYNC : out std_logic := '1';
-		rgb : out std_logic_vector(5 downto 0)
+		rgb : out std_logic_vector(5 downto 0);
+		nes_data : in std_logic;
+		nes_latch : out std_logic;
+		nes_clk : out std_logic;
+		leds : out std_logic_vector(7 downto 0)
 	);
 end top;
 
@@ -51,6 +55,15 @@ architecture synth of top is
 			r : out unsigned(9 downto 0);
 			c : out unsigned(9 downto 0)
 		);
+	end component;
+	
+	component nes is
+	  port (
+	    data : in std_logic;
+	    NES_Latch   : out std_logic;
+	    NES_Clock   : out std_logic;
+	    output : out std_logic_vector(7 downto 0)
+	  );
 	end component;
 	
 	component pattern_gen is
@@ -121,6 +134,14 @@ begin
 		towerxpos => towerxpos,
 		towerypos => towerypos,
 		rgb => rgb
+	);
+	
+	nes_1 : nes
+	port map (
+		data => nes_data,
+		NES_Latch => nes_latch,
+		NES_Clock => nes_clk,
+		output=>leds
 	);
 	
 end;

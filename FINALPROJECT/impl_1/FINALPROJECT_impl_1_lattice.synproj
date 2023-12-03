@@ -28,7 +28,7 @@
 
 
 -use_io_reg auto
-
+-vh2008
 
 
 
@@ -37,19 +37,20 @@
 -use_io_insertion 1
 -resolve_mixed_drivers 0
 -sdc "FINALPROJECT_impl_1_cpe.ldc"
--path "Z:/es4/final project stuff/FINALPROJECT/mypll"
--path "C:/lscc/radiant/2023.1/ispfpga/ice40tp/data" "Z:/es4/final project stuff/FINALPROJECT/impl_1" "Z:/es4/final project stuff/FINALPROJECT"
+-path "Z:/es4/ES4FinalProject/FINALPROJECT/mypll"
+-path "C:/lscc/radiant/2023.1/ispfpga/ice40tp/data" "Z:/es4/ES4FinalProject/FINALPROJECT/impl_1" "Z:/es4/ES4FinalProject/FINALPROJECT"
 -ver "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
--lib "work" -vhd "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/gravity.vhd"
-"Z:/es4/final project stuff/FINALPROJECT/source/impl_1/pattern_gen.vhd"
-"Z:/es4/final project stuff/FINALPROJECT/source/impl_1/top.vhd"
-"Z:/es4/final project stuff/FINALPROJECT/source/impl_1/vga.vhd"
--ver "Z:/es4/final project stuff/FINALPROJECT/mypll/rtl/mypll.v"
--lib "work" -vhd "Z:/es4/final project stuff/FINALPROJECT/source/impl_1/tower.vhd"
+-lib "work" -vhd "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/gravity.vhd"
+"Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/pattern_gen.vhd"
+"Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/top.vhd"
+"Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/vga.vhd"
+-ver "Z:/es4/ES4FinalProject/FINALPROJECT/mypll/rtl/mypll.v"
+-lib "work" -vhd "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/tower.vhd"
+"Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/nes.vhd"
 
 
--path "Z:/es4/final project stuff/FINALPROJECT"
+-path "Z:/es4/ES4FinalProject/FINALPROJECT"
 -top top
 -udb "FINALPROJECT_impl_1_rtl.udb"
 -output_hdl "FINALPROJECT_impl_1.vm"

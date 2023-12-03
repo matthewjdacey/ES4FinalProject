@@ -1,7 +1,7 @@
 |************************************************************************
 | IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
-| Report Generate Date: Dec  2 2023
-| Report Generate Time: 15:12:14
+| Report Generate Date: Dec  3 2023
+| Report Generate Time: 15:10:58
 |************************************************************************
 |IBIS file ice40up.ibs   
 |Lattice Semiconductor Corporation   
@@ -136,16 +136,27 @@ L_pkg          2.652nH         1.989nH         3.504nH
 C_pkg          0.2807pF        0.2236pF        0.3481pF
 |
 [Pin]  signal_name          model_name           R_pin     L_pin     C_pin
+18            nes_data             lvc330axxxbaaaaaaain
+20            clk                  lvc330axxxbaaaaaaain
+2             leds[0]              lvc330a080aaaaaaaaou
+46            leds[1]              lvc330a080aaaaaaaaou
+47            leds[2]              lvc330a080aaaaaaaaou
+45            leds[3]              lvc330a080aaaaaaaaou
+48            leds[4]              lvc330a080aaaaaaaaou
+3             leds[5]              lvc330a080aaaaaaaaou
+4             leds[6]              lvc330a080aaaaaaaaou
+44            leds[7]              lvc330a080aaaaaaaaou
+13            nes_clk              lvc330a080aaaaaaaaou
+19            nes_latch            lvc330a080aaaaaaaaou
+34            rgb[0]               lvc330a080aaaaaaaaou
+43            rgb[1]               lvc330a080aaaaaaaaou
 36            rgb[2]               lvc330a080aaaaaaaaou
 42            rgb[3]               lvc330a080aaaaaaaaou
-43            rgb[1]               lvc330a080aaaaaaaaou
 38            rgb[4]               lvc330a080aaaaaaaaou
 28            rgb[5]               lvc330a080aaaaaaaaou
 26            VSYNC                lvc330a080aaaaaaaaou
 25            HSYNC                lvc330a080aaaaaaaaou
 23            output_freq          lvc330a080aaaaaaaaou
-34            rgb[0]               lvc330a080aaaaaaaaou
-20            clk                  lvc330axxxbaaaaaaain
 |************************************************************************
 [Model] lvc330a080aaaaaaaaou
 Model_type Output
