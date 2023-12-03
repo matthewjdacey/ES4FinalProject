@@ -5,6 +5,7 @@ use IEEE.numeric_std.all;
 entity tower is 
 	port(
 		update : in std_logic;
+		gamestate : in std_logic;
 		towerxpos : out unsigned(9 downto 0);
 		towerypos : out unsigned(9 downto 0)
 	);
@@ -19,9 +20,9 @@ begin
 	towerxpos <= xpos;
 	towerypos <= 50 + (counter mod 280);
 	
-	process(update) is begin
+	process(update, gamestate) is begin
 		
-		if rising_edge(update) then
+		if rising_edge(update) and gamestate = '0' then
 			
 			if (xpos = 0) then
 				xpos <= "1010110010";

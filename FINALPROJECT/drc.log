@@ -1,5 +1,47 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2023.1.0.43.3
-Sun Dec  3 13:29:22 2023
+Sun Dec  3 15:51:37 2023
 
+WARNING <1027013> - No port matched 'clk'.
+WARNING <1014301> - Can't resolve object 'clk' in constraint 'ldc_set_location -site {20} [get_ports clk]'.
+WARNING <1027013> - No port matched 'HSYNC'.
+WARNING <1014301> - Can't resolve object 'HSYNC' in constraint 'ldc_set_location -site {25} [get_ports HSYNC]'.
+WARNING <1027013> - No port matched 'VSYNC'.
+WARNING <1014301> - Can't resolve object 'VSYNC' in constraint 'ldc_set_location -site {26} [get_ports VSYNC]'.
+WARNING <1027013> - No port matched 'output_freq'.
+WARNING <1014301> - Can't resolve object 'output_freq' in constraint 'ldc_set_location -site {23} [get_ports output_freq]'.
+WARNING <1027013> - No port matched 'rgb[0]'.
+WARNING <1014301> - Can't resolve object 'rgb[0]' in constraint 'ldc_set_location -site {34} [get_ports {rgb[0]}]'.
+WARNING <1027013> - No port matched 'rgb[1]'.
+WARNING <1014301> - Can't resolve object 'rgb[1]' in constraint 'ldc_set_location -site {43} [get_ports {rgb[1]}]'.
+WARNING <1027013> - No port matched 'rgb[2]'.
+WARNING <1014301> - Can't resolve object 'rgb[2]' in constraint 'ldc_set_location -site {36} [get_ports {rgb[2]}]'.
+WARNING <1027013> - No port matched 'rgb[3]'.
+WARNING <1014301> - Can't resolve object 'rgb[3]' in constraint 'ldc_set_location -site {42} [get_ports {rgb[3]}]'.
+WARNING <1027013> - No port matched 'rgb[4]'.
+WARNING <1014301> - Can't resolve object 'rgb[4]' in constraint 'ldc_set_location -site {38} [get_ports {rgb[4]}]'.
+WARNING <1027013> - No port matched 'rgb[5]'.
+WARNING <1014301> - Can't resolve object 'rgb[5]' in constraint 'ldc_set_location -site {28} [get_ports {rgb[5]}]'.
 WARNING <1027013> - No port matched 'button'.
 WARNING <1014301> - Can't resolve object 'button' in constraint 'ldc_set_location -site {9} [get_ports button]'.
+WARNING <1027013> - No port matched 'leds[0]'.
+WARNING <1014301> - Can't resolve object 'leds[0]' in constraint 'ldc_set_location -site {2} [get_ports {leds[0]}]'.
+WARNING <1027013> - No port matched 'leds[1]'.
+WARNING <1014301> - Can't resolve object 'leds[1]' in constraint 'ldc_set_location -site {46} [get_ports {leds[1]}]'.
+WARNING <1027013> - No port matched 'leds[2]'.
+WARNING <1014301> - Can't resolve object 'leds[2]' in constraint 'ldc_set_location -site {47} [get_ports {leds[2]}]'.
+WARNING <1027013> - No port matched 'leds[3]'.
+WARNING <1014301> - Can't resolve object 'leds[3]' in constraint 'ldc_set_location -site {45} [get_ports {leds[3]}]'.
+WARNING <1027013> - No port matched 'leds[4]'.
+WARNING <1014301> - Can't resolve object 'leds[4]' in constraint 'ldc_set_location -site {48} [get_ports {leds[4]}]'.
+WARNING <1027013> - No port matched 'leds[5]'.
+WARNING <1014301> - Can't resolve object 'leds[5]' in constraint 'ldc_set_location -site {3} [get_ports {leds[5]}]'.
+WARNING <1027013> - No port matched 'leds[6]'.
+WARNING <1014301> - Can't resolve object 'leds[6]' in constraint 'ldc_set_location -site {4} [get_ports {leds[6]}]'.
+WARNING <1027013> - No port matched 'leds[7]'.
+WARNING <1014301> - Can't resolve object 'leds[7]' in constraint 'ldc_set_location -site {44} [get_ports {leds[7]}]'.
+WARNING <1027013> - No port matched 'nes_clk'.
+WARNING <1014301> - Can't resolve object 'nes_clk' in constraint 'ldc_set_location -site {13} [get_ports nes_clk]'.
+WARNING <1027013> - No port matched 'nes_latch'.
+WARNING <1014301> - Can't resolve object 'nes_latch' in constraint 'ldc_set_location -site {19} [get_ports nes_latch]'.
+WARNING <1027013> - No port matched 'nes_data'.
+WARNING <1014301> - Can't resolve object 'nes_data' in constraint 'ldc_set_location -site {18} [get_ports nes_data]'.

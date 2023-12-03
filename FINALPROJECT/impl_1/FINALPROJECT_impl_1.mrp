@@ -6,13 +6,13 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Sun Dec  3 15:10:43 2023
+Mapped on: Sun Dec  3 16:27:18 2023
 
 Design Information
 ------------------
 
-Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc
-     Z:/es4/ES4FinalProject/FINALPROJECT/constraint.pdc -o
+Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc Z:/es4/final project
+     stuff/FINALPROJECT/ES4FinalProject-main/FINALPROJECT/constraint.pdc -o
      FINALPROJECT_impl_1_map.udb -mp FINALPROJECT_impl_1.mrp -hierrpt -gui
 
 Design Summary
@@ -20,10 +20,11 @@ Design Summary
 
    Number of slice registers: 101 out of  5280 (2%)
    Number of I/O registers:      1 out of   117 (1%)
-   Number of LUT4s:           294 out of  5280 (6%)
-      Number of logic LUT4s:             118
+   Number of LUT4s:           350 out of  5280 (7%)
+      Number of logic LUT4s:             163
       Number of inserted feedthru LUT4s:  18
-      Number of ripple logic:             79 (158 LUT4s)
+      Number of replicated LUT4s:          1
+      Number of ripple logic:             84 (168 LUT4s)
    Number of IO sites used:   21 out of 39 (54%)
       Number of IO sites used for general PIO: 21
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -46,7 +47,7 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  5
-      Net VSYNC_c: 35 loads, 35 rising, 0 falling (Driver: Pin
+      Net VSYNC_c: 40 loads, 40 rising, 0 falling (Driver: Pin
      vga_1.VSYNC_c_I_0/Q)
       Net vga_clk: 15 loads, 15 rising, 0 falling (Driver: Pin
      mypll_1.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
@@ -56,9 +57,8 @@ Design Summary
      nes_1.nes_clk_c_I_0/Z)
    Number of Clock Enables:  3
       Net VCC_net: 1 loads, 0 SLICEs
-      Net gravity_1.velocity_5__N_157: 6 loads, 6 SLICEs
+      Net rgb_c_0_N_212: 34 loads, 34 SLICEs
       Net vga_1.column_0__N_49: 6 loads, 6 SLICEs
-   Number of LSRs:  5
 
                                     Page 1
 
@@ -68,22 +68,23 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net gravity_1.velocity_5__N_158: 6 loads, 6 SLICEs
+   Number of LSRs:  5
+      Net gravity_1.velocity_5__N_177: 11 loads, 11 SLICEs
       Net vga_1.column_0__N_49: 6 loads, 6 SLICEs
-      Net vga_1.valid_N_186: 1 loads, 1 SLICEs
+      Net vga_1.valid_N_216: 1 loads, 1 SLICEs
       Net vga_1.column_0__N_50: 6 loads, 6 SLICEs
-      Net tower_1.towerxpos_1__N_68: 5 loads, 5 SLICEs
+      Net tower_1.towerxpos_1__N_77: 5 loads, 5 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net VCC_net: 41 loads
+      Net VCC_net: 45 loads
+      Net rgb_c_0_N_212: 34 loads
+      Net leds_c_0: 14 loads
       Net vga_1.column_0__N_49: 13 loads
+      Net gravity_1.n5: 11 loads
+      Net gravity_1.velocity_5__N_177: 11 loads
       Net nes_latch_c: 9 loads
-      Net tower_1.towerxpos_1__N_68: 9 loads
-      Net column[5]: 8 loads
-      Net column[6]: 8 loads
+      Net tower_1.towerxpos_1__N_77: 9 loads
       Net column[7]: 8 loads
       Net column[8]: 8 loads
-      Net column[9]: 8 loads
-      Net tower_1.counter[9]: 8 loads
 
 
 
@@ -94,8 +95,9 @@ Design Summary (cont)
 Design Errors/Warnings
 ----------------------
 
-WARNING <1026001> - map: Z:/es4/ES4FinalProject/FINALPROJECT/constraint.pdc (11)
-     : No port matched 'button'.
+WARNING <1026001> - map: Z:/es4/final project
+     stuff/FINALPROJECT/ES4FinalProject-main/FINALPROJECT/constraint.pdc (11) :
+     No port matched 'button'.
 WARNING <1027013> - map: No port matched 'button'.
 WARNING <1014301> - map: Can't resolve object 'button' in constraint
      'ldc_set_location -site {9} [get_ports button]'.
@@ -109,21 +111,19 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| nes_data            | INPUT     |           |       |       |           |
+| rgb[4]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| clk                 | INPUT     |           |       |       |           |
+| rgb[3]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| leds[0]             | OUTPUT    |           |       |       |           |
+| rgb[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| leds[1]             | OUTPUT    |           |       |       |           |
+| VSYNC               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| leds[2]             | OUTPUT    |           |       |       |           |
+| HSYNC               | OUTPUT    |           | O     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| leds[3]             | OUTPUT    |           |       |       |           |
+| output_freq         | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| leds[4]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| leds[5]             | OUTPUT    |           |       |       |           |
+| rgb[2]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
                                     Page 2
@@ -134,31 +134,33 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
-| leds[6]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| leds[7]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| nes_clk             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| nes_latch           | OUTPUT    |           |       |       |           |
+| rgb[1]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[0]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[1]              | OUTPUT    |           |       |       |           |
+| nes_latch           | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[2]              | OUTPUT    |           |       |       |           |
+| nes_clk             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[3]              | OUTPUT    |           |       |       |           |
+| leds[7]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[4]              | OUTPUT    |           |       |       |           |
+| leds[6]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[5]              | OUTPUT    |           |       |       |           |
+| leds[5]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| VSYNC               | OUTPUT    |           |       |       |           |
+| leds[4]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| HSYNC               | OUTPUT    |           | O     |       |           |
+| leds[3]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| output_freq         | OUTPUT    |           |       |       |           |
+| leds[2]             | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| leds[1]             | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| leds[0]             | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| nes_data            | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
@@ -189,8 +191,6 @@ PLL 1:                                 Pin/Node Value
   ENABLE_ICEGATE_PORTB:                         0
   PLLOUT_SELECT_PORTA:                          GENCLK
   PLLOUT_SELECT_PORTB:                          GENCLK
-  SHIFTREG_DIV_MODE:                            0
-  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
 
                                     Page 3
 
@@ -200,6 +200,8 @@ PLL 1:                                 Pin/Node Value
 
 PLL/DLL Summary (cont)
 ----------------------
+  SHIFTREG_DIV_MODE:                            0
+  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
   FDA_RELATIVE:                                 0
   FEEDBACK_PATH:                                SIMPLE
   DELAY_ADJUSTMENT_MODE_FEEDBACK:               FIXED
@@ -239,9 +241,7 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 60 MB
-
-
+   Peak Memory Usage: 61 MB
 
 
 

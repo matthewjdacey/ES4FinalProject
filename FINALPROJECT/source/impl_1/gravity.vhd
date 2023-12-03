@@ -8,6 +8,7 @@ port(
 	update: in std_logic;
 	reset: in std_logic;
 	jump: in std_logic;
+	gamestate : in std_logic;
 	position: out unsigned(9 downto 0)
 );
 end;
@@ -20,11 +21,11 @@ architecture synth of gravity is
 	signal intposition : unsigned(9 downto 0);
 
 begin
-	process (update) begin
-		if rising_edge(update) then
+	process (update, gamestate) begin
+		if rising_edge(update) and gamestate = '0' then
 			if intposition > "0111100000" then
-				pos <= "0000000000000000000000000";
-				velocity <= "00000000000000000";
+				pos <= "000000000000000000000000";
+				velocity <= "0000000000000000";
 			elsif jump = '1' then
 				velocity <= "1111110000000000";
 			elsif velocity > "0000010000000000" then
