@@ -22,10 +22,11 @@ begin
 	
 	process(update, gamestate) is begin
 		
-		if rising_edge(update) and gamestate = '0' then
-			
-			if (xpos = 0) then
-				xpos <= "1010110010";
+		if rising_edge(update) then
+			if gamestate = '1' then
+				xpos <= 10d"690";
+			elsif (xpos = 0) then
+				xpos <= 10d"690";
 				-- add a "random" big number and mod it to simulate randomness
 				counter <= counter + 2435;
 				

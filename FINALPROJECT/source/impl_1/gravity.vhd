@@ -16,25 +16,38 @@ end;
 architecture synth of gravity is
 
 	signal velocity: signed(15 downto 0) := "0000000000000000";
-	signal dt: unsigned(23 downto 0) := "000000000000000000000000";
-	signal pos: unsigned(23 downto 0) := "000000000000000000000000";
+	signal dt: signed(23 downto 0) := "000000000000000000000000";
+	signal pos: signed(23 downto 0) := "000000000000000000000000";
 	signal intposition : unsigned(9 downto 0);
+	
+	signal was_jump : std_logic := '0';
 
 begin
 	process (update, gamestate) begin
-		if rising_edge(update) and gamestate = '0' then
-			if intposition > "0111100000" then
-				pos <= "000000000000000000000000";
-				velocity <= "0000000000000000";
-			elsif jump = '1' then
-				velocity <= "1111110000000000";
-			elsif velocity > "0000010000000000" then
-				velocity <= "0000010000000000";
+		if rising_edge(update) then
+			if gamestate = '1' then
+				pos <= 24d"0";
+				velocity <= 16d"0";
+			elsif intposition > 10d"480" then
+				pos <= 24d"0";
+				velocity <= 16d"0";
+			elsif velocity > 16d"1024" then
+				velocity <= 16d"1024";
 			else
-				velocity <= velocity + "000000000100000";
+				--velocity <= velocity + 16d"32";
+				velocity <= velocity + 16d"32";
 			end if;
 			
-			dt <= "00000000" + unsigned(velocity) * "00010000";
+			if jump and not was_jump then
+				was_jump <= '1';
+				velocity <= 16d"0" - 16d"512";
+			elsif jump and was_jump then
+				was_jump <= '1';
+			else
+				was_jump <= '0';
+			end if;
+			
+			dt <= velocity * 8d"16";
 			pos <= pos + dt;
 
 		end if;
@@ -42,5 +55,5 @@ begin
 	
 
 	position <= intposition;
-	intposition <= pos(21 downto 12);
+	intposition <= unsigned(pos(21 downto 12));
 end;

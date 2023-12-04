@@ -1,0 +1,9 @@
+#Start recording tcl command: 12/4/2023 13:05:05
+#Project Location: Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT; Project name: FINALPROJECT
+prj_open "Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/FINALPROJECT.rdf"
+prj_add_source "Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/source/impl_1/gamestate.vhd"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_save 
+prj_close
+#Stop recording: 12/4/2023 13:14:48

@@ -127,7 +127,7 @@ begin
 	port map(
 		update => gameclk,
 		reset => '0',
-		jump => leds(0),
+		jump => leds(7),
 		gamestate => gameover,
 		position => birdpos
 	);
@@ -162,7 +162,7 @@ begin
 	
 	gamestate_1 : gamestate
 	port map (
-		startbutton => leds(0),
+		startbutton => leds(4),
 		birdpos => birdpos,
 		towerxpos => towerxpos,
 		towerypos => towerypos,

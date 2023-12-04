@@ -18,15 +18,18 @@ signal state : std_logic := '1';
 
 begin
 	gameover <= state;
-	
 	-- low state -> playing, high state -> game over
 	
 	-- start playing the game when on game over screen and start button is pressed
 	state <= '0' when state = '1' and startbutton = '1' else
 	
 	-- stop playing when game is not over and tower x position overlaps bird position and bird hitbox collides w/ top or bottom of tower or ground
-			 '1' when state = '0' and (birdpos > 430 or ((towerxpos > 295 and towerxpos < 395) and (birdpos > towerypos + 150 or birdpos + 50 < towerypos))) else
-			 
-	-- if none of these met don't change anything
-			 state;
+	'1' when state = '0' and (
+		birdpos > 430 or (
+			(towerxpos > 295 and towerxpos < 395) and (birdpos > towerypos + 150 or birdpos + 50 < towerypos)
+		)
+	) else
+	-- keep state the same	
+	state;
+	
 end;
