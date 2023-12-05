@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Dec  4 15:49:32 2023
+Tue Dec  5 17:23:31 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -55,7 +55,7 @@ create_clock -name {nes_1/clk} -period 20.8333 [get_pins {nes_1/osc/CLKHF }]
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 5.88235%
+Constraint Coverage: 3.99754%
 
 
 1.3  Overall Summary
@@ -78,6 +78,9 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
+vga_1/column_9__I_0/D                   |    No arrival or required
+vga_1/column_9__I_0/SP                  |    No arrival or required
+vga_1/column_9__I_0/SR                  |    No arrival or required
 vga_1/column_9__I_10/D                  |    No arrival or required
 vga_1/column_9__I_11/D                  |    No arrival or required
 {vga_1/column_9__I_11/SP   vga_1/column_9__I_10/SP}                           
@@ -88,10 +91,6 @@ vga_1/column_9__I_12/D                  |    No arrival or required
 vga_1/column_9__I_13/D                  |    No arrival or required
 {vga_1/column_9__I_13/SP   vga_1/column_9__I_12/SP}                           
                                         |    No arrival or required
-{vga_1/column_9__I_13/SR   vga_1/column_9__I_12/SR}                           
-                                        |    No arrival or required
-vga_1/column_9__I_14/D                  |    No arrival or required
-vga_1/column_9__I_15/D                  |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -151,31 +150,31 @@ nition                                  |                         2
 Combinational Loops
 -------------------
 ++++ Loop1
-gamestate_1.gameover_I_64/A	->	gamestate_1.gameover_I_64/Z
+gamestate_1/state_I_136/C	->	gamestate_1/state_I_136/Z
 
 ++++ Loop2
-nes_1/leds_c_7_I_0/A	->	nes_1/leds_c_7_I_0/Z
-
-++++ Loop3
-nes_1/leds_c_6_I_0/A	->	nes_1/leds_c_6_I_0/Z
-
-++++ Loop4
-nes_1/leds_c_4_I_0/A	->	nes_1/leds_c_4_I_0/Z
-
-++++ Loop5
-nes_1/leds_c_5_I_0/A	->	nes_1/leds_c_5_I_0/Z
-
-++++ Loop6
 nes_1/leds_c_0_I_0/A	->	nes_1/leds_c_0_I_0/Z
 
-++++ Loop7
+++++ Loop3
 nes_1/leds_c_1_I_0/A	->	nes_1/leds_c_1_I_0/Z
 
-++++ Loop8
+++++ Loop4
 nes_1/leds_c_2_I_0/A	->	nes_1/leds_c_2_I_0/Z
 
-++++ Loop9
+++++ Loop5
 nes_1/leds_c_3_I_0/A	->	nes_1/leds_c_3_I_0/Z
+
+++++ Loop6
+nes_1/leds_c_4_I_0/A	->	nes_1/leds_c_4_I_0/Z
+
+++++ Loop7
+nes_1/leds_c_5_I_0/A	->	nes_1/leds_c_5_I_0/Z
+
+++++ Loop8
+nes_1/leds_c_6_I_0/A	->	nes_1/leds_c_6_I_0/Z
+
+++++ Loop9
+nes_1/leds_c_7_I_0/A	->	nes_1/leds_c_7_I_0/Z
 
 
 1.6  Error/Warning Messages
@@ -258,16 +257,16 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-nes_1/counter_8__I_54/D                  |   10.480 ns 
-nes_1/counter_8__I_55/D                  |   10.757 ns 
-nes_1/counter_8__I_56/D                  |   11.589 ns 
-nes_1/counter_8__I_57/D                  |   11.866 ns 
-nes_1/counter_8__I_58/D                  |   12.143 ns 
-nes_1/counter_8__I_59/D                  |   12.420 ns 
-nes_1/counter_8__I_60/D                  |   12.697 ns 
-nes_1/counter_8__I_61/D                  |   12.974 ns 
+nes_1/counter_8__I_126/D                 |   10.480 ns 
+nes_1/counter_8__I_127/D                 |   10.757 ns 
+nes_1/counter_8__I_128/D                 |   11.589 ns 
+nes_1/counter_8__I_129/D                 |   11.866 ns 
+nes_1/counter_8__I_130/D                 |   12.143 ns 
+nes_1/counter_8__I_131/D                 |   12.420 ns 
+nes_1/counter_8__I_132/D                 |   12.697 ns 
+nes_1/counter_8__I_133/D                 |   12.974 ns 
 nes_1/counter_8__I_0/D                   |   13.251 ns 
-nes_1/counter_176_206__i8/D              |   13.528 ns 
+nes_1/counter_208_239__i8/D              |   13.528 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -290,8 +289,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_54/D  (SLICE_R14C7A)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_126/D  (SLICE_R9C13A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 18
@@ -306,67 +305,67 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.000                 12.300  2       
-nes_1/counter_176_206_add_4_11/CI1->nes_1/counter_176_206_add_4_11/CO1
-                                          SLICE_R14C6B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-nes_1/n2778                                                  NET DELAY               0.000                 12.577  2       
-nes_1/counter_176_206_add_4_13/CI0->nes_1/counter_176_206_add_4_13/CO0
-                                          SLICE_R14C6C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-nes_1/n5930                                                  NET DELAY               0.000                 12.854  2       
-nes_1/counter_176_206_add_4_13/CI1->nes_1/counter_176_206_add_4_13/CO1
-                                          SLICE_R14C6C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-nes_1/n2780                                                  NET DELAY               0.000                 13.131  2       
-nes_1/counter_176_206_add_4_15/CI0->nes_1/counter_176_206_add_4_15/CO0
-                                          SLICE_R14C6D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-nes_1/n5933                                                  NET DELAY               0.000                 13.408  2       
-nes_1/counter_176_206_add_4_15/CI1->nes_1/counter_176_206_add_4_15/CO1
-                                          SLICE_R14C6D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-nes_1/n2782                                                  NET DELAY               0.555                 14.240  2       
-nes_1/counter_176_206_add_4_17/CI0->nes_1/counter_176_206_add_4_17/CO0
-                                          SLICE_R14C7A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-nes_1/n5936                                                  NET DELAY               0.661                 15.178  2       
-nes_1/counter_176_206_add_4_17/D1->nes_1/counter_176_206_add_4_17/S1
-                                          SLICE_R14C7A       D1_TO_F1_DELAY          0.476                 15.654  1       
-nes_1/counter_8__N_157[16]                                   NET DELAY               0.000                 15.654  1       
-nes_1/counter_8__I_54/D                                                              0.000                 15.654  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.000                 12.300  2       
+nes_1/counter_208_239_add_4_11/CI1->nes_1/counter_208_239_add_4_11/CO1
+                                          SLICE_R9C12B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+nes_1/n5974                                                  NET DELAY               0.000                 12.577  2       
+nes_1/counter_208_239_add_4_13/CI0->nes_1/counter_208_239_add_4_13/CO0
+                                          SLICE_R9C12C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+nes_1/n10606                                                 NET DELAY               0.000                 12.854  2       
+nes_1/counter_208_239_add_4_13/CI1->nes_1/counter_208_239_add_4_13/CO1
+                                          SLICE_R9C12C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+nes_1/n5976                                                  NET DELAY               0.000                 13.131  2       
+nes_1/counter_208_239_add_4_15/CI0->nes_1/counter_208_239_add_4_15/CO0
+                                          SLICE_R9C12D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+nes_1/n10609                                                 NET DELAY               0.000                 13.408  2       
+nes_1/counter_208_239_add_4_15/CI1->nes_1/counter_208_239_add_4_15/CO1
+                                          SLICE_R9C12D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+nes_1/n5978                                                  NET DELAY               0.555                 14.240  2       
+nes_1/counter_208_239_add_4_17/CI0->nes_1/counter_208_239_add_4_17/CO0
+                                          SLICE_R9C13A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+nes_1/n10612                                                 NET DELAY               0.661                 15.178  2       
+nes_1/counter_208_239_add_4_17/D1->nes_1/counter_208_239_add_4_17/S1
+                                          SLICE_R9C13A       D1_TO_F1_DELAY          0.476                 15.654  1       
+nes_1/counter_8__N_260[16]                                   NET DELAY               0.000                 15.654  1       
+nes_1/counter_8__I_126/D                                                             0.000                 15.654  1       
 
 
 Destination Clock Path
@@ -375,7 +374,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_55/CK   nes_1/counter_8__I_54/CK}
+{nes_1/counter_8__I_127/CK   nes_1/counter_8__I_126/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -390,8 +389,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_55/D  (SLICE_R14C7A)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_127/D  (SLICE_R9C13A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 17
@@ -406,64 +405,64 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.000                 12.300  2       
-nes_1/counter_176_206_add_4_11/CI1->nes_1/counter_176_206_add_4_11/CO1
-                                          SLICE_R14C6B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-nes_1/n2778                                                  NET DELAY               0.000                 12.577  2       
-nes_1/counter_176_206_add_4_13/CI0->nes_1/counter_176_206_add_4_13/CO0
-                                          SLICE_R14C6C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-nes_1/n5930                                                  NET DELAY               0.000                 12.854  2       
-nes_1/counter_176_206_add_4_13/CI1->nes_1/counter_176_206_add_4_13/CO1
-                                          SLICE_R14C6C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-nes_1/n2780                                                  NET DELAY               0.000                 13.131  2       
-nes_1/counter_176_206_add_4_15/CI0->nes_1/counter_176_206_add_4_15/CO0
-                                          SLICE_R14C6D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-nes_1/n5933                                                  NET DELAY               0.000                 13.408  2       
-nes_1/counter_176_206_add_4_15/CI1->nes_1/counter_176_206_add_4_15/CO1
-                                          SLICE_R14C6D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-nes_1/n2782                                                  NET DELAY               1.216                 14.901  2       
-nes_1/counter_176_206_add_4_17/D0->nes_1/counter_176_206_add_4_17/S0
-                                          SLICE_R14C7A       D0_TO_F0_DELAY          0.476                 15.377  1       
-nes_1/counter_8__N_157[15]                                   NET DELAY               0.000                 15.377  1       
-nes_1/counter_8__I_55/D                                                              0.000                 15.377  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.000                 12.300  2       
+nes_1/counter_208_239_add_4_11/CI1->nes_1/counter_208_239_add_4_11/CO1
+                                          SLICE_R9C12B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+nes_1/n5974                                                  NET DELAY               0.000                 12.577  2       
+nes_1/counter_208_239_add_4_13/CI0->nes_1/counter_208_239_add_4_13/CO0
+                                          SLICE_R9C12C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+nes_1/n10606                                                 NET DELAY               0.000                 12.854  2       
+nes_1/counter_208_239_add_4_13/CI1->nes_1/counter_208_239_add_4_13/CO1
+                                          SLICE_R9C12C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+nes_1/n5976                                                  NET DELAY               0.000                 13.131  2       
+nes_1/counter_208_239_add_4_15/CI0->nes_1/counter_208_239_add_4_15/CO0
+                                          SLICE_R9C12D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+nes_1/n10609                                                 NET DELAY               0.000                 13.408  2       
+nes_1/counter_208_239_add_4_15/CI1->nes_1/counter_208_239_add_4_15/CO1
+                                          SLICE_R9C12D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+nes_1/n5978                                                  NET DELAY               1.216                 14.901  2       
+nes_1/counter_208_239_add_4_17/D0->nes_1/counter_208_239_add_4_17/S0
+                                          SLICE_R9C13A       D0_TO_F0_DELAY          0.476                 15.377  1       
+nes_1/counter_8__N_260[15]                                   NET DELAY               0.000                 15.377  1       
+nes_1/counter_8__I_127/D                                                             0.000                 15.377  1       
 
 
 Destination Clock Path
@@ -472,7 +471,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_55/CK   nes_1/counter_8__I_54/CK}
+{nes_1/counter_8__I_127/CK   nes_1/counter_8__I_126/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -487,8 +486,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_56/D  (SLICE_R14C6D)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_128/D  (SLICE_R9C12D)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 16
@@ -503,61 +502,61 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.000                 12.300  2       
-nes_1/counter_176_206_add_4_11/CI1->nes_1/counter_176_206_add_4_11/CO1
-                                          SLICE_R14C6B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-nes_1/n2778                                                  NET DELAY               0.000                 12.577  2       
-nes_1/counter_176_206_add_4_13/CI0->nes_1/counter_176_206_add_4_13/CO0
-                                          SLICE_R14C6C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-nes_1/n5930                                                  NET DELAY               0.000                 12.854  2       
-nes_1/counter_176_206_add_4_13/CI1->nes_1/counter_176_206_add_4_13/CO1
-                                          SLICE_R14C6C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-nes_1/n2780                                                  NET DELAY               0.000                 13.131  2       
-nes_1/counter_176_206_add_4_15/CI0->nes_1/counter_176_206_add_4_15/CO0
-                                          SLICE_R14C6D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-nes_1/n5933                                                  NET DELAY               0.661                 14.069  2       
-nes_1/counter_176_206_add_4_15/D1->nes_1/counter_176_206_add_4_15/S1
-                                          SLICE_R14C6D       D1_TO_F1_DELAY          0.476                 14.545  1       
-nes_1/counter_8__N_157[14]                                   NET DELAY               0.000                 14.545  1       
-nes_1/counter_8__I_56/D                                                              0.000                 14.545  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.000                 12.300  2       
+nes_1/counter_208_239_add_4_11/CI1->nes_1/counter_208_239_add_4_11/CO1
+                                          SLICE_R9C12B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+nes_1/n5974                                                  NET DELAY               0.000                 12.577  2       
+nes_1/counter_208_239_add_4_13/CI0->nes_1/counter_208_239_add_4_13/CO0
+                                          SLICE_R9C12C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+nes_1/n10606                                                 NET DELAY               0.000                 12.854  2       
+nes_1/counter_208_239_add_4_13/CI1->nes_1/counter_208_239_add_4_13/CO1
+                                          SLICE_R9C12C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+nes_1/n5976                                                  NET DELAY               0.000                 13.131  2       
+nes_1/counter_208_239_add_4_15/CI0->nes_1/counter_208_239_add_4_15/CO0
+                                          SLICE_R9C12D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+nes_1/n10609                                                 NET DELAY               0.661                 14.069  2       
+nes_1/counter_208_239_add_4_15/D1->nes_1/counter_208_239_add_4_15/S1
+                                          SLICE_R9C12D       D1_TO_F1_DELAY          0.476                 14.545  1       
+nes_1/counter_8__N_260[14]                                   NET DELAY               0.000                 14.545  1       
+nes_1/counter_8__I_128/D                                                             0.000                 14.545  1       
 
 
 Destination Clock Path
@@ -566,7 +565,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_57/CK   nes_1/counter_8__I_56/CK}
+{nes_1/counter_8__I_129/CK   nes_1/counter_8__I_128/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -581,8 +580,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_57/D  (SLICE_R14C6D)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_129/D  (SLICE_R9C12D)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 15
@@ -597,58 +596,58 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.000                 12.300  2       
-nes_1/counter_176_206_add_4_11/CI1->nes_1/counter_176_206_add_4_11/CO1
-                                          SLICE_R14C6B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-nes_1/n2778                                                  NET DELAY               0.000                 12.577  2       
-nes_1/counter_176_206_add_4_13/CI0->nes_1/counter_176_206_add_4_13/CO0
-                                          SLICE_R14C6C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-nes_1/n5930                                                  NET DELAY               0.000                 12.854  2       
-nes_1/counter_176_206_add_4_13/CI1->nes_1/counter_176_206_add_4_13/CO1
-                                          SLICE_R14C6C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-nes_1/n2780                                                  NET DELAY               0.661                 13.792  2       
-nes_1/counter_176_206_add_4_15/D0->nes_1/counter_176_206_add_4_15/S0
-                                          SLICE_R14C6D       D0_TO_F0_DELAY          0.476                 14.268  1       
-nes_1/counter_8__N_157[13]                                   NET DELAY               0.000                 14.268  1       
-nes_1/counter_8__I_57/D                                                              0.000                 14.268  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.000                 12.300  2       
+nes_1/counter_208_239_add_4_11/CI1->nes_1/counter_208_239_add_4_11/CO1
+                                          SLICE_R9C12B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+nes_1/n5974                                                  NET DELAY               0.000                 12.577  2       
+nes_1/counter_208_239_add_4_13/CI0->nes_1/counter_208_239_add_4_13/CO0
+                                          SLICE_R9C12C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+nes_1/n10606                                                 NET DELAY               0.000                 12.854  2       
+nes_1/counter_208_239_add_4_13/CI1->nes_1/counter_208_239_add_4_13/CO1
+                                          SLICE_R9C12C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+nes_1/n5976                                                  NET DELAY               0.661                 13.792  2       
+nes_1/counter_208_239_add_4_15/D0->nes_1/counter_208_239_add_4_15/S0
+                                          SLICE_R9C12D       D0_TO_F0_DELAY          0.476                 14.268  1       
+nes_1/counter_8__N_260[13]                                   NET DELAY               0.000                 14.268  1       
+nes_1/counter_8__I_129/D                                                             0.000                 14.268  1       
 
 
 Destination Clock Path
@@ -657,7 +656,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_57/CK   nes_1/counter_8__I_56/CK}
+{nes_1/counter_8__I_129/CK   nes_1/counter_8__I_128/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -672,8 +671,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_58/D  (SLICE_R14C6C)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_130/D  (SLICE_R9C12C)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 14
@@ -688,55 +687,55 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.000                 12.300  2       
-nes_1/counter_176_206_add_4_11/CI1->nes_1/counter_176_206_add_4_11/CO1
-                                          SLICE_R14C6B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-nes_1/n2778                                                  NET DELAY               0.000                 12.577  2       
-nes_1/counter_176_206_add_4_13/CI0->nes_1/counter_176_206_add_4_13/CO0
-                                          SLICE_R14C6C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-nes_1/n5930                                                  NET DELAY               0.661                 13.515  2       
-nes_1/counter_176_206_add_4_13/D1->nes_1/counter_176_206_add_4_13/S1
-                                          SLICE_R14C6C       D1_TO_F1_DELAY          0.476                 13.991  1       
-nes_1/counter_8__N_157[12]                                   NET DELAY               0.000                 13.991  1       
-nes_1/counter_8__I_58/D                                                              0.000                 13.991  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.000                 12.300  2       
+nes_1/counter_208_239_add_4_11/CI1->nes_1/counter_208_239_add_4_11/CO1
+                                          SLICE_R9C12B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+nes_1/n5974                                                  NET DELAY               0.000                 12.577  2       
+nes_1/counter_208_239_add_4_13/CI0->nes_1/counter_208_239_add_4_13/CO0
+                                          SLICE_R9C12C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+nes_1/n10606                                                 NET DELAY               0.661                 13.515  2       
+nes_1/counter_208_239_add_4_13/D1->nes_1/counter_208_239_add_4_13/S1
+                                          SLICE_R9C12C       D1_TO_F1_DELAY          0.476                 13.991  1       
+nes_1/counter_8__N_260[12]                                   NET DELAY               0.000                 13.991  1       
+nes_1/counter_8__I_130/D                                                             0.000                 13.991  1       
 
 
 Destination Clock Path
@@ -745,7 +744,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_59/CK   nes_1/counter_8__I_58/CK}
+{nes_1/counter_8__I_131/CK   nes_1/counter_8__I_130/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -760,8 +759,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_59/D  (SLICE_R14C6C)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_131/D  (SLICE_R9C12C)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 13
@@ -776,52 +775,52 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.000                 12.300  2       
-nes_1/counter_176_206_add_4_11/CI1->nes_1/counter_176_206_add_4_11/CO1
-                                          SLICE_R14C6B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-nes_1/n2778                                                  NET DELAY               0.661                 13.238  2       
-nes_1/counter_176_206_add_4_13/D0->nes_1/counter_176_206_add_4_13/S0
-                                          SLICE_R14C6C       D0_TO_F0_DELAY          0.476                 13.714  1       
-nes_1/counter_8__N_157[11]                                   NET DELAY               0.000                 13.714  1       
-nes_1/counter_8__I_59/D                                                              0.000                 13.714  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.000                 12.300  2       
+nes_1/counter_208_239_add_4_11/CI1->nes_1/counter_208_239_add_4_11/CO1
+                                          SLICE_R9C12B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+nes_1/n5974                                                  NET DELAY               0.661                 13.238  2       
+nes_1/counter_208_239_add_4_13/D0->nes_1/counter_208_239_add_4_13/S0
+                                          SLICE_R9C12C       D0_TO_F0_DELAY          0.476                 13.714  1       
+nes_1/counter_8__N_260[11]                                   NET DELAY               0.000                 13.714  1       
+nes_1/counter_8__I_131/D                                                             0.000                 13.714  1       
 
 
 Destination Clock Path
@@ -830,7 +829,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_59/CK   nes_1/counter_8__I_58/CK}
+{nes_1/counter_8__I_131/CK   nes_1/counter_8__I_130/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -845,8 +844,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_60/D  (SLICE_R14C6B)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_132/D  (SLICE_R9C12B)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 12
@@ -861,49 +860,49 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.000                 12.023  2       
-nes_1/counter_176_206_add_4_11/CI0->nes_1/counter_176_206_add_4_11/CO0
-                                          SLICE_R14C6B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-nes_1/n5927                                                  NET DELAY               0.661                 12.961  2       
-nes_1/counter_176_206_add_4_11/D1->nes_1/counter_176_206_add_4_11/S1
-                                          SLICE_R14C6B       D1_TO_F1_DELAY          0.476                 13.437  1       
-nes_1/counter_8__N_157[10]                                   NET DELAY               0.000                 13.437  1       
-nes_1/counter_8__I_60/D                                                              0.000                 13.437  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.000                 12.023  2       
+nes_1/counter_208_239_add_4_11/CI0->nes_1/counter_208_239_add_4_11/CO0
+                                          SLICE_R9C12B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+nes_1/n10603                                                 NET DELAY               0.661                 12.961  2       
+nes_1/counter_208_239_add_4_11/D1->nes_1/counter_208_239_add_4_11/S1
+                                          SLICE_R9C12B       D1_TO_F1_DELAY          0.476                 13.437  1       
+nes_1/counter_8__N_260[10]                                   NET DELAY               0.000                 13.437  1       
+nes_1/counter_8__I_132/D                                                             0.000                 13.437  1       
 
 
 Destination Clock Path
@@ -912,7 +911,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_61/CK   nes_1/counter_8__I_60/CK}
+{nes_1/counter_8__I_133/CK   nes_1/counter_8__I_132/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -927,8 +926,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_61/D  (SLICE_R14C6B)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_133/D  (SLICE_R9C12B)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 11
@@ -943,46 +942,46 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.000                 11.746  2       
-nes_1/counter_176_206_add_4_9/CI1->nes_1/counter_176_206_add_4_9/CO1
-                                          SLICE_R14C6A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-nes_1/n2776                                                  NET DELAY               0.661                 12.684  2       
-nes_1/counter_176_206_add_4_11/D0->nes_1/counter_176_206_add_4_11/S0
-                                          SLICE_R14C6B       D0_TO_F0_DELAY          0.476                 13.160  1       
-nes_1/counter_8__N_157[9]                                    NET DELAY               0.000                 13.160  1       
-nes_1/counter_8__I_61/D                                                              0.000                 13.160  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.000                 11.746  2       
+nes_1/counter_208_239_add_4_9/CI1->nes_1/counter_208_239_add_4_9/CO1
+                                          SLICE_R9C12A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+nes_1/n5972                                                  NET DELAY               0.661                 12.684  2       
+nes_1/counter_208_239_add_4_11/D0->nes_1/counter_208_239_add_4_11/S0
+                                          SLICE_R9C12B       D0_TO_F0_DELAY          0.476                 13.160  1       
+nes_1/counter_8__N_260[9]                                    NET DELAY               0.000                 13.160  1       
+nes_1/counter_8__I_133/D                                                             0.000                 13.160  1       
 
 
 Destination Clock Path
@@ -991,7 +990,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_8__I_61/CK   nes_1/counter_8__I_60/CK}
+{nes_1/counter_8__I_133/CK   nes_1/counter_8__I_132/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -1006,8 +1005,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_8__I_0/D  (SLICE_R14C6A)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_8__I_0/D  (SLICE_R9C12A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 10
@@ -1022,42 +1021,42 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               0.555                 11.469  2       
-nes_1/counter_176_206_add_4_9/CI0->nes_1/counter_176_206_add_4_9/CO0
-                                          SLICE_R14C6A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-nes_1/n5924                                                  NET DELAY               0.661                 12.407  2       
-nes_1/counter_176_206_add_4_9/D1->nes_1/counter_176_206_add_4_9/S1
-                                          SLICE_R14C6A       D1_TO_F1_DELAY          0.476                 12.883  1       
-nes_1/counter_8__N_157[8]                                    NET DELAY               0.000                 12.883  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               0.555                 11.469  2       
+nes_1/counter_208_239_add_4_9/CI0->nes_1/counter_208_239_add_4_9/CO0
+                                          SLICE_R9C12A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+nes_1/n10600                                                 NET DELAY               0.661                 12.407  2       
+nes_1/counter_208_239_add_4_9/D1->nes_1/counter_208_239_add_4_9/S1
+                                          SLICE_R9C12A       D1_TO_F1_DELAY          0.476                 12.883  1       
+nes_1/counter_8__N_260[8]                                    NET DELAY               0.000                 12.883  1       
 nes_1/counter_8__I_0/D                                                               0.000                 12.883  1       
 
 
@@ -1067,7 +1066,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_176_206__i8/CK   nes_1/counter_8__I_0/CK}
+{nes_1/counter_208_239__i8/CK   nes_1/counter_8__I_0/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -1082,8 +1081,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_176_206__i1/Q  (SLICE_R14C5A)
-Path End         : nes_1/counter_176_206__i8/D  (SLICE_R14C6A)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_208_239__i8/D  (SLICE_R9C12A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 9
@@ -1098,40 +1097,40 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 nes_1/clk                                                    NET DELAY               5.499                  5.499  10      
-nes_1/counter_176_206__i1/CK                                                         0.000                  5.499  1       
+nes_1/counter_208_239__i1/CK                                                         0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-nes_1/counter_176_206__i1/CK->nes_1/counter_176_206__i1/Q
-                                          SLICE_R14C5A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
 nes_1/n17                                                    NET DELAY               2.022                  8.909  1       
-nes_1/counter_176_206_add_4_1/C1->nes_1/counter_176_206_add_4_1/CO1
-                                          SLICE_R14C5A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-nes_1/n2768                                                  NET DELAY               0.000                  9.252  2       
-nes_1/counter_176_206_add_4_3/CI0->nes_1/counter_176_206_add_4_3/CO0
-                                          SLICE_R14C5B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-nes_1/n5915                                                  NET DELAY               0.000                  9.529  2       
-nes_1/counter_176_206_add_4_3/CI1->nes_1/counter_176_206_add_4_3/CO1
-                                          SLICE_R14C5B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-nes_1/n2770                                                  NET DELAY               0.000                  9.806  2       
-nes_1/counter_176_206_add_4_5/CI0->nes_1/counter_176_206_add_4_5/CO0
-                                          SLICE_R14C5C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-nes_1/n5918                                                  NET DELAY               0.000                 10.083  2       
-nes_1/counter_176_206_add_4_5/CI1->nes_1/counter_176_206_add_4_5/CO1
-                                          SLICE_R14C5C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-nes_1/n2772                                                  NET DELAY               0.000                 10.360  2       
-nes_1/counter_176_206_add_4_7/CI0->nes_1/counter_176_206_add_4_7/CO0
-                                          SLICE_R14C5D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-nes_1/n5921                                                  NET DELAY               0.000                 10.637  2       
-nes_1/counter_176_206_add_4_7/CI1->nes_1/counter_176_206_add_4_7/CO1
-                                          SLICE_R14C5D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-nes_1/n2774                                                  NET DELAY               1.216                 12.130  2       
-nes_1/counter_176_206_add_4_9/D0->nes_1/counter_176_206_add_4_9/S0
-                                          SLICE_R14C6A       D0_TO_F0_DELAY          0.476                 12.606  1       
-nes_1/counter_8__N_157[7]                                    NET DELAY               0.000                 12.606  1       
-nes_1/counter_176_206__i8/D                                                          0.000                 12.606  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/CO1
+                                          SLICE_R9C11A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+nes_1/n5964                                                  NET DELAY               0.000                  9.252  2       
+nes_1/counter_208_239_add_4_3/CI0->nes_1/counter_208_239_add_4_3/CO0
+                                          SLICE_R9C11B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+nes_1/n10591                                                 NET DELAY               0.000                  9.529  2       
+nes_1/counter_208_239_add_4_3/CI1->nes_1/counter_208_239_add_4_3/CO1
+                                          SLICE_R9C11B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+nes_1/n5966                                                  NET DELAY               0.000                  9.806  2       
+nes_1/counter_208_239_add_4_5/CI0->nes_1/counter_208_239_add_4_5/CO0
+                                          SLICE_R9C11C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+nes_1/n10594                                                 NET DELAY               0.000                 10.083  2       
+nes_1/counter_208_239_add_4_5/CI1->nes_1/counter_208_239_add_4_5/CO1
+                                          SLICE_R9C11C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+nes_1/n5968                                                  NET DELAY               0.000                 10.360  2       
+nes_1/counter_208_239_add_4_7/CI0->nes_1/counter_208_239_add_4_7/CO0
+                                          SLICE_R9C11D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+nes_1/n10597                                                 NET DELAY               0.000                 10.637  2       
+nes_1/counter_208_239_add_4_7/CI1->nes_1/counter_208_239_add_4_7/CO1
+                                          SLICE_R9C11D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+nes_1/n5970                                                  NET DELAY               1.216                 12.130  2       
+nes_1/counter_208_239_add_4_9/D0->nes_1/counter_208_239_add_4_9/S0
+                                          SLICE_R9C12A       D0_TO_F0_DELAY          0.476                 12.606  1       
+nes_1/counter_8__N_260[7]                                    NET DELAY               0.000                 12.606  1       
+nes_1/counter_208_239__i8/D                                                          0.000                 12.606  1       
 
 
 Destination Clock Path
@@ -1140,7 +1139,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 20.833  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
 nes_1/clk                                                    NET DELAY               5.499                 26.332  10      
-{nes_1/counter_176_206__i8/CK   nes_1/counter_8__I_0/CK}
+{nes_1/counter_208_239__i8/CK   nes_1/counter_8__I_0/CK}
                                                                                      0.000                 26.332  1       
                                                              Uncertainty          -(0.000)                 26.332  
                                                              Setup time           -(0.198)                 26.134  
@@ -1170,16 +1169,16 @@ Path Slack  (Passed)                                                            
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-nes_1/counter_176_206__i8/D              |    1.913 ns 
+nes_1/counter_8__I_126/D                 |    1.913 ns 
+nes_1/counter_208_239__i1/D              |    1.913 ns 
+nes_1/counter_208_239__i2/D              |    1.913 ns 
+nes_1/counter_208_239__i3/D              |    1.913 ns 
+nes_1/counter_208_239__i4/D              |    1.913 ns 
+nes_1/counter_208_239__i5/D              |    1.913 ns 
+nes_1/counter_208_239__i6/D              |    1.913 ns 
+nes_1/counter_208_239__i7/D              |    1.913 ns 
+nes_1/counter_208_239__i8/D              |    1.913 ns 
 nes_1/counter_8__I_0/D                   |    1.913 ns 
-nes_1/counter_8__I_61/D                  |    1.913 ns 
-nes_1/counter_8__I_60/D                  |    1.913 ns 
-nes_1/counter_8__I_59/D                  |    1.913 ns 
-nes_1/counter_8__I_58/D                  |    1.913 ns 
-nes_1/counter_8__I_57/D                  |    1.913 ns 
-nes_1/counter_8__I_56/D                  |    1.913 ns 
-nes_1/counter_8__I_55/D                  |    1.913 ns 
-nes_1/counter_8__I_54/D                  |    1.913 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -1202,8 +1201,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : nes_1/counter_176_206__i8/Q  (SLICE_R14C6A)
-Path End         : nes_1/counter_176_206__i8/D  (SLICE_R14C6A)
+Path Begin       : nes_1/counter_8__I_126/Q  (SLICE_R9C13A)
+Path End         : nes_1/counter_8__I_126/D  (SLICE_R9C13A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1218,20 +1217,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_176_206__i8/CK   nes_1/counter_8__I_0/CK}
+{nes_1/counter_8__I_127/CK   nes_1/counter_8__I_126/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_176_206__i8/CK->nes_1/counter_176_206__i8/Q
-                                          SLICE_R14C6A       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-nes_1/n10                                                    NET DELAY        0.882                  4.745  1       
-nes_1/counter_176_206_add_4_9/C0->nes_1/counter_176_206_add_4_9/S0
-                                          SLICE_R14C6A       C0_TO_F0_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[7]                                    NET DELAY        0.000                  4.997  1       
-nes_1/counter_176_206__i8/D                                                   0.000                  4.997  1       
+nes_1/counter_8__I_126/CK->nes_1/counter_8__I_126/Q
+                                          SLICE_R9C13A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+nes_1/NEScount[7]                                            NET DELAY        0.882                  4.745  2       
+nes_1/counter_208_239_add_4_17/C1->nes_1/counter_208_239_add_4_17/S1
+                                          SLICE_R9C13A       C1_TO_F1_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[16]                                   NET DELAY        0.000                  4.997  1       
+nes_1/counter_8__I_126/D                                                      0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1240,7 +1239,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_176_206__i8/CK   nes_1/counter_8__I_0/CK}
+{nes_1/counter_8__I_127/CK   nes_1/counter_8__I_126/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1255,8 +1254,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_0/Q  (SLICE_R14C6A)
-Path End         : nes_1/counter_8__I_0/D  (SLICE_R14C6A)
+Path Begin       : nes_1/counter_208_239__i1/Q  (SLICE_R9C11A)
+Path End         : nes_1/counter_208_239__i1/D  (SLICE_R9C11A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1271,20 +1270,19 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_176_206__i8/CK   nes_1/counter_8__I_0/CK}
-                                                                              0.000                  3.084  1       
+nes_1/counter_208_239__i1/CK                                                  0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_0/CK->nes_1/counter_8__I_0/Q
-                                          SLICE_R14C6A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-nes_1/counter[8]                                             NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_9/C1->nes_1/counter_176_206_add_4_9/S1
-                                          SLICE_R14C6A       C1_TO_F1_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[8]                                    NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_0/D                                                        0.000                  4.997  1       
+nes_1/counter_208_239__i1/CK->nes_1/counter_208_239__i1/Q
+                                          SLICE_R9C11A       CLK_TO_Q1_DELAY  0.779                  3.863  1       
+nes_1/n17                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_1/C1->nes_1/counter_208_239_add_4_1/S1
+                                          SLICE_R9C11A       C1_TO_F1_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[0]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i1/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1293,8 +1291,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_176_206__i8/CK   nes_1/counter_8__I_0/CK}
-                                                                              0.000                  3.084  1       
+nes_1/counter_208_239__i1/CK                                                  0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1308,8 +1305,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_61/Q  (SLICE_R14C6B)
-Path End         : nes_1/counter_8__I_61/D  (SLICE_R14C6B)
+Path Begin       : nes_1/counter_208_239__i2/Q  (SLICE_R9C11B)
+Path End         : nes_1/counter_208_239__i2/D  (SLICE_R9C11B)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1324,20 +1321,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_61/CK   nes_1/counter_8__I_60/CK}
+{nes_1/counter_208_239__i2/CK   nes_1/counter_208_239__i3/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_61/CK->nes_1/counter_8__I_61/Q
-                                          SLICE_R14C6B       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-nes_1/NEScount[0]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_11/C0->nes_1/counter_176_206_add_4_11/S0
-                                          SLICE_R14C6B       C0_TO_F0_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[9]                                    NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_61/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i2/CK->nes_1/counter_208_239__i2/Q
+                                          SLICE_R9C11B       CLK_TO_Q0_DELAY  0.779                  3.863  1       
+nes_1/n16                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_3/C0->nes_1/counter_208_239_add_4_3/S0
+                                          SLICE_R9C11B       C0_TO_F0_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[1]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i2/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1346,7 +1343,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_61/CK   nes_1/counter_8__I_60/CK}
+{nes_1/counter_208_239__i2/CK   nes_1/counter_208_239__i3/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1361,8 +1358,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_60/Q  (SLICE_R14C6B)
-Path End         : nes_1/counter_8__I_60/D  (SLICE_R14C6B)
+Path Begin       : nes_1/counter_208_239__i3/Q  (SLICE_R9C11B)
+Path End         : nes_1/counter_208_239__i3/D  (SLICE_R9C11B)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1377,20 +1374,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_61/CK   nes_1/counter_8__I_60/CK}
+{nes_1/counter_208_239__i2/CK   nes_1/counter_208_239__i3/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_60/CK->nes_1/counter_8__I_60/Q
-                                          SLICE_R14C6B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-nes_1/NEScount[1]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_11/C1->nes_1/counter_176_206_add_4_11/S1
-                                          SLICE_R14C6B       C1_TO_F1_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[10]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_60/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i3/CK->nes_1/counter_208_239__i3/Q
+                                          SLICE_R9C11B       CLK_TO_Q1_DELAY  0.779                  3.863  1       
+nes_1/n15                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_3/C1->nes_1/counter_208_239_add_4_3/S1
+                                          SLICE_R9C11B       C1_TO_F1_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[2]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i3/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1399,7 +1396,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_61/CK   nes_1/counter_8__I_60/CK}
+{nes_1/counter_208_239__i2/CK   nes_1/counter_208_239__i3/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1414,8 +1411,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_59/Q  (SLICE_R14C6C)
-Path End         : nes_1/counter_8__I_59/D  (SLICE_R14C6C)
+Path Begin       : nes_1/counter_208_239__i4/Q  (SLICE_R9C11C)
+Path End         : nes_1/counter_208_239__i4/D  (SLICE_R9C11C)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1430,20 +1427,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_59/CK   nes_1/counter_8__I_58/CK}
+{nes_1/counter_208_239__i4/CK   nes_1/counter_208_239__i5/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_59/CK->nes_1/counter_8__I_59/Q
-                                          SLICE_R14C6C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-nes_1/NEScount[2]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_13/C0->nes_1/counter_176_206_add_4_13/S0
-                                          SLICE_R14C6C       C0_TO_F0_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[11]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_59/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i4/CK->nes_1/counter_208_239__i4/Q
+                                          SLICE_R9C11C       CLK_TO_Q0_DELAY  0.779                  3.863  1       
+nes_1/n14                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_5/C0->nes_1/counter_208_239_add_4_5/S0
+                                          SLICE_R9C11C       C0_TO_F0_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[3]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i4/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1452,7 +1449,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_59/CK   nes_1/counter_8__I_58/CK}
+{nes_1/counter_208_239__i4/CK   nes_1/counter_208_239__i5/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1467,8 +1464,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_58/Q  (SLICE_R14C6C)
-Path End         : nes_1/counter_8__I_58/D  (SLICE_R14C6C)
+Path Begin       : nes_1/counter_208_239__i5/Q  (SLICE_R9C11C)
+Path End         : nes_1/counter_208_239__i5/D  (SLICE_R9C11C)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1483,20 +1480,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_59/CK   nes_1/counter_8__I_58/CK}
+{nes_1/counter_208_239__i4/CK   nes_1/counter_208_239__i5/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_58/CK->nes_1/counter_8__I_58/Q
-                                          SLICE_R14C6C       CLK_TO_Q1_DELAY  0.779                  3.863  3       
-nes_1/NEScount[3]                                            NET DELAY        0.882                  4.745  3       
-nes_1/counter_176_206_add_4_13/C1->nes_1/counter_176_206_add_4_13/S1
-                                          SLICE_R14C6C       C1_TO_F1_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[12]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_58/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i5/CK->nes_1/counter_208_239__i5/Q
+                                          SLICE_R9C11C       CLK_TO_Q1_DELAY  0.779                  3.863  1       
+nes_1/n13                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_5/C1->nes_1/counter_208_239_add_4_5/S1
+                                          SLICE_R9C11C       C1_TO_F1_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[4]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i5/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1505,7 +1502,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_59/CK   nes_1/counter_8__I_58/CK}
+{nes_1/counter_208_239__i4/CK   nes_1/counter_208_239__i5/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1520,8 +1517,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_57/Q  (SLICE_R14C6D)
-Path End         : nes_1/counter_8__I_57/D  (SLICE_R14C6D)
+Path Begin       : nes_1/counter_208_239__i6/Q  (SLICE_R9C11D)
+Path End         : nes_1/counter_208_239__i6/D  (SLICE_R9C11D)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1536,20 +1533,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_57/CK   nes_1/counter_8__I_56/CK}
+{nes_1/counter_208_239__i6/CK   nes_1/counter_208_239__i7/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_57/CK->nes_1/counter_8__I_57/Q
-                                          SLICE_R14C6D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-nes_1/NEScount[4]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_15/C0->nes_1/counter_176_206_add_4_15/S0
-                                          SLICE_R14C6D       C0_TO_F0_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[13]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_57/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i6/CK->nes_1/counter_208_239__i6/Q
+                                          SLICE_R9C11D       CLK_TO_Q0_DELAY  0.779                  3.863  1       
+nes_1/n12                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_7/C0->nes_1/counter_208_239_add_4_7/S0
+                                          SLICE_R9C11D       C0_TO_F0_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[5]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i6/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1558,7 +1555,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_57/CK   nes_1/counter_8__I_56/CK}
+{nes_1/counter_208_239__i6/CK   nes_1/counter_208_239__i7/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1573,8 +1570,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_56/Q  (SLICE_R14C6D)
-Path End         : nes_1/counter_8__I_56/D  (SLICE_R14C6D)
+Path Begin       : nes_1/counter_208_239__i7/Q  (SLICE_R9C11D)
+Path End         : nes_1/counter_208_239__i7/D  (SLICE_R9C11D)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1589,20 +1586,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_57/CK   nes_1/counter_8__I_56/CK}
+{nes_1/counter_208_239__i6/CK   nes_1/counter_208_239__i7/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_56/CK->nes_1/counter_8__I_56/Q
-                                          SLICE_R14C6D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-nes_1/NEScount[5]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_15/C1->nes_1/counter_176_206_add_4_15/S1
-                                          SLICE_R14C6D       C1_TO_F1_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[14]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_56/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i7/CK->nes_1/counter_208_239__i7/Q
+                                          SLICE_R9C11D       CLK_TO_Q1_DELAY  0.779                  3.863  1       
+nes_1/n11                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_7/C1->nes_1/counter_208_239_add_4_7/S1
+                                          SLICE_R9C11D       C1_TO_F1_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[6]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i7/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1611,7 +1608,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_57/CK   nes_1/counter_8__I_56/CK}
+{nes_1/counter_208_239__i6/CK   nes_1/counter_208_239__i7/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1626,8 +1623,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_55/Q  (SLICE_R14C7A)
-Path End         : nes_1/counter_8__I_55/D  (SLICE_R14C7A)
+Path Begin       : nes_1/counter_208_239__i8/Q  (SLICE_R9C12A)
+Path End         : nes_1/counter_208_239__i8/D  (SLICE_R9C12A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1642,20 +1639,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_55/CK   nes_1/counter_8__I_54/CK}
+{nes_1/counter_208_239__i8/CK   nes_1/counter_8__I_0/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_55/CK->nes_1/counter_8__I_55/Q
-                                          SLICE_R14C7A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-nes_1/NEScount[6]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_17/C0->nes_1/counter_176_206_add_4_17/S0
-                                          SLICE_R14C7A       C0_TO_F0_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[15]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_55/D                                                       0.000                  4.997  1       
+nes_1/counter_208_239__i8/CK->nes_1/counter_208_239__i8/Q
+                                          SLICE_R9C12A       CLK_TO_Q0_DELAY  0.779                  3.863  1       
+nes_1/n10                                                    NET DELAY        0.882                  4.745  1       
+nes_1/counter_208_239_add_4_9/C0->nes_1/counter_208_239_add_4_9/S0
+                                          SLICE_R9C12A       C0_TO_F0_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[7]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_208_239__i8/D                                                   0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1664,7 +1661,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_55/CK   nes_1/counter_8__I_54/CK}
+{nes_1/counter_208_239__i8/CK   nes_1/counter_8__I_0/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1679,8 +1676,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : nes_1/counter_8__I_54/Q  (SLICE_R14C7A)
-Path End         : nes_1/counter_8__I_54/D  (SLICE_R14C7A)
+Path Begin       : nes_1/counter_8__I_0/Q  (SLICE_R9C12A)
+Path End         : nes_1/counter_8__I_0/D  (SLICE_R9C12A)
 Source Clock     : nes_1/clk (R)
 Destination Clock: nes_1/clk (R)
 Logic Level      : 2
@@ -1695,20 +1692,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_55/CK   nes_1/counter_8__I_54/CK}
+{nes_1/counter_208_239__i8/CK   nes_1/counter_8__I_0/CK}
                                                                               0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-nes_1/counter_8__I_54/CK->nes_1/counter_8__I_54/Q
-                                          SLICE_R14C7A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-nes_1/NEScount[7]                                            NET DELAY        0.882                  4.745  2       
-nes_1/counter_176_206_add_4_17/C1->nes_1/counter_176_206_add_4_17/S1
-                                          SLICE_R14C7A       C1_TO_F1_DELAY   0.252                  4.997  1       
-nes_1/counter_8__N_157[16]                                   NET DELAY        0.000                  4.997  1       
-nes_1/counter_8__I_54/D                                                       0.000                  4.997  1       
+nes_1/counter_8__I_0/CK->nes_1/counter_8__I_0/Q
+                                          SLICE_R9C12A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+nes_1/counter[8]                                             NET DELAY        0.882                  4.745  2       
+nes_1/counter_208_239_add_4_9/C1->nes_1/counter_208_239_add_4_9/S1
+                                          SLICE_R9C12A       C1_TO_F1_DELAY   0.252                  4.997  1       
+nes_1/counter_8__N_260[8]                                    NET DELAY        0.000                  4.997  1       
+nes_1/counter_8__I_0/D                                                        0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1717,7 +1714,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 nes_1.osc/CLKHF                           HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 nes_1/clk                                                    NET DELAY        3.084                  3.084  11      
-{nes_1/counter_8__I_55/CK   nes_1/counter_8__I_54/CK}
+{nes_1/counter_208_239__i8/CK   nes_1/counter_8__I_0/CK}
                                                                               0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  

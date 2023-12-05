@@ -1,96 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Map">
-        <Message>
-            <ID>1026001</ID>
-            <Severity>16</Severity>
-            <Dynamic>Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/constraint.pdc</Dynamic>
-            <Dynamic>11</Dynamic>
-            <Dynamic>No port matched 'button'.</Dynamic>
-            <Navigation>Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/constraint.pdc</Navigation>
-            <Navigation>11</Navigation>
-        </Message>
-        <Message>
-            <ID>1027013</ID>
-            <Severity>16</Severity>
-            <Dynamic>port</Dynamic>
-            <Dynamic>button</Dynamic>
-        </Message>
-        <Message>
-            <ID>1014301</ID>
-            <Severity>16</Severity>
-            <Dynamic>button</Dynamic>
-            <Dynamic>ldc_set_location -site {9} [get_ports button]</Dynamic>
-        </Message>
-        <Message>
-            <ID>1011001</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {9} [get_ports button]</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
-        </Message>
-    </Task>
-    <Task name="PAR">
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35831026</ID>
@@ -154,17 +63,17 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/mypll/rtl/mypll.v(11): </Dynamic>
+            <Dynamic>Z:/es4/FINALPROJECT/FINALPROJECT/mypll/rtl/mypll.v(11): </Dynamic>
             <Dynamic>mypll</Dynamic>
-            <Navigation>Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/mypll/rtl/mypll.v</Navigation>
+            <Navigation>Z:/es4/FINALPROJECT/FINALPROJECT/mypll/rtl/mypll.v</Navigation>
             <Navigation>11</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/mypll/rtl/mypll.v(105): </Dynamic>
+            <Dynamic>Z:/es4/FINALPROJECT/FINALPROJECT/mypll/rtl/mypll.v(105): </Dynamic>
             <Dynamic>mypll_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;)</Dynamic>
-            <Navigation>Z:/es4/ES4FinalProject-gamestates-NEED-TO-TEST/FINALPROJECT/mypll/rtl/mypll.v</Navigation>
+            <Navigation>Z:/es4/FINALPROJECT/FINALPROJECT/mypll/rtl/mypll.v</Navigation>
             <Navigation>105</Navigation>
         </Message>
         <Message>
@@ -335,114 +244,114 @@
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gravity.vhd(6): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd(6): </Dynamic>
             <Dynamic>gravity</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gravity.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd</Navigation>
             <Navigation>6</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gravity.vhd(16): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd(16): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gravity.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd</Navigation>
             <Navigation>16</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/top.vhd(5): </Dynamic>
-            <Dynamic>top</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/top.vhd</Navigation>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd(5): </Dynamic>
+            <Dynamic>pattern_gen</Dynamic>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/top.vhd(19): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd(23): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/top.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd</Navigation>
+            <Navigation>23</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/top.vhd(5): </Dynamic>
+            <Dynamic>top</Dynamic>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/top.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/top.vhd(19): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/top.vhd</Navigation>
             <Navigation>19</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/pattern_gen.vhd(5): </Dynamic>
-            <Dynamic>pattern_gen</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/pattern_gen.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/pattern_gen.vhd(20): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/pattern_gen.vhd</Navigation>
-            <Navigation>20</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/vga.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/vga.vhd(5): </Dynamic>
             <Dynamic>vga</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/vga.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/vga.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/vga.vhd(17): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/vga.vhd(17): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/vga.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/vga.vhd</Navigation>
             <Navigation>17</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/tower.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/tower.vhd(5): </Dynamic>
             <Dynamic>tower</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/tower.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/tower.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/tower.vhd(14): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/tower.vhd(17): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/tower.vhd</Navigation>
-            <Navigation>14</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/tower.vhd</Navigation>
+            <Navigation>17</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/nes.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/nes.vhd(5): </Dynamic>
             <Dynamic>nes</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/nes.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/nes.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/nes.vhd(14): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/nes.vhd(14): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/nes.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/nes.vhd</Navigation>
             <Navigation>14</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gamestate.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd(5): </Dynamic>
             <Dynamic>gamestate</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gamestate.vhd</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gamestate.vhd(15): </Dynamic>
+            <Dynamic>z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd(18): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4finalproject-gamestates-need-to-test/finalproject/source/impl_1/gamestate.vhd</Navigation>
-            <Navigation>15</Navigation>
+            <Navigation>z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd</Navigation>
+            <Navigation>18</Navigation>
         </Message>
         <Message>
             <ID>35935049</ID>
@@ -468,106 +377,6 @@
             <ID>35001771</ID>
             <Severity>16</Severity>
             <Dynamic>gameover</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[9]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[8]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[7]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[6]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[5]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[4]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[3]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[2]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[1]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerxpos[0]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[9]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[8]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[7]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[6]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[5]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[4]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[3]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[2]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[1]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>towerypos[0]</Dynamic>
         </Message>
         <Message>
             <ID>35001771</ID>
@@ -615,30 +424,6 @@
             <Dynamic>state</Dynamic>
         </Message>
         <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>3</Dynamic>
-            <Dynamic>dt</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>2</Dynamic>
-            <Dynamic>dt</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>1</Dynamic>
-            <Dynamic>dt</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>0</Dynamic>
-            <Dynamic>dt</Dynamic>
-        </Message>
-        <Message>
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sclk_i</Dynamic>
@@ -649,69 +434,45 @@
             <Dynamic>sdi_i</Dynamic>
         </Message>
         <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\gravity_1/dt</Dynamic>
+        </Message>
+        <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i1</Dynamic>
+            <Dynamic>\tower_2/xpos_204__i0</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\tower_1/xpos_177__i0</Dynamic>
+            <Dynamic>\tower_1/xpos_209__i0</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i4</Dynamic>
+            <Dynamic>\tower_2/xpos_204__i1</Dynamic>
+            <Dynamic>One</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\gravity_1/pos_205_241__i1</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
+            <Dynamic>\tower_1/xpos_209__i1</Dynamic>
+            <Dynamic>One</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
             <Dynamic>\gravity_1/velocity_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/dt_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/velocity_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/velocity_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/velocity_i3</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
@@ -723,49 +484,19 @@
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\gravity_1/dt_i2</Dynamic>
+            <Dynamic>\gravity_1/velocity_i2</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\gravity_1/dt_i3</Dynamic>
+            <Dynamic>\gravity_1/velocity_i1</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\gravity_1/dt_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/dt_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\gravity_1/pos_i6</Dynamic>
+            <Dynamic>\gravity_1/velocity_i3</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
@@ -821,6 +552,97 @@
             <ID>70001944</ID>
             <Severity>16</Severity>
             <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+    </Task>
+    <Task name="Map">
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>Z:/es4/FINALPROJECT/FINALPROJECT/constraint.pdc</Dynamic>
+            <Dynamic>11</Dynamic>
+            <Dynamic>No port matched 'button'.</Dynamic>
+            <Navigation>Z:/es4/FINALPROJECT/FINALPROJECT/constraint.pdc</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>button</Dynamic>
+        </Message>
+        <Message>
+            <ID>1014301</ID>
+            <Severity>16</Severity>
+            <Dynamic>button</Dynamic>
+            <Dynamic>ldc_set_location -site {9} [get_ports button]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {9} [get_ports button]</Dynamic>
+        </Message>
+    </Task>
+    <Task name="PAR">
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {vga_clk} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {output_freq_c} -source [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {mypll_1/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
 </BaliMessageLog>

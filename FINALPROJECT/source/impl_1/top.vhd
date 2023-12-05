@@ -19,6 +19,9 @@ end top;
 architecture synth of top is
 
 	component tower is 
+		generic(
+			towerstart : integer := 0
+			);
 		port(
 			update : in std_logic;
 			gamestate : in std_logic;
@@ -72,9 +75,12 @@ architecture synth of top is
 	port(
 		startbutton : in std_logic;
 		birdpos : in unsigned (9 downto 0);
-		towerxpos : in unsigned (9 downto 0);
-		towerypos : in unsigned (9 downto 0);
-		gameover : out std_logic
+		tower1xpos : in unsigned (9 downto 0);
+		tower1ypos : in unsigned (9 downto 0);
+		tower2xpos : in unsigned (9 downto 0);
+		tower2ypos : in unsigned (9 downto 0);
+		gameover : out std_logic;
+		update : in std_logic
 		);
 	end component;
 	
@@ -85,8 +91,10 @@ architecture synth of top is
 			column : in unsigned(9 downto 0);
 			gamestate : in std_logic;
 			birdpos : in unsigned(9 downto 0);
-			towerxpos : in unsigned(9 downto 0);
-			towerypos :in unsigned(9 downto 0);
+			tower1xpos : in unsigned(9 downto 0);
+			tower1ypos :in unsigned(9 downto 0);
+			tower2xpos : in unsigned(9 downto 0);
+			tower2ypos : in unsigned(9 downto 0);
 			rgb : out std_logic_vector(5 downto 0)
 			
 		);
@@ -99,8 +107,10 @@ architecture synth of top is
 	signal row : unsigned (9 downto 0);
 	signal column : unsigned (9 downto 0);
 	signal gameover : std_logic := '1';
-	signal towerxpos : unsigned (9 downto 0) := "1010110010";
-	signal towerypos : unsigned (9 downto 0 ) := "0011001000";
+	signal tower1xpos : unsigned (9 downto 0);
+	signal tower1ypos : unsigned (9 downto 0 );
+	signal tower2xpos : unsigned (9 downto 0);
+	signal tower2ypos : unsigned (9 downto 0 );
 	signal birdpos : unsigned(9 downto 0);
 	
 begin
@@ -133,11 +143,25 @@ begin
 	);
 		
 	tower_1 : tower
+	generic map(
+		towerstart => 0
+		)
 	port map(
 		update => gameclk,
 		gamestate => gameover,
-		towerxpos => towerxpos,
-		towerypos => towerypos
+		towerxpos => tower1xpos,
+		towerypos => tower1ypos
+	);
+	
+	tower_2 : tower
+	generic map(
+		towerstart => 120
+		)
+	port map(
+		update => gameclk,
+		gamestate => gameover,
+		towerxpos => tower2xpos,
+		towerypos => tower2ypos
 	);
 	
 	pattern_gen_1 : pattern_gen 
@@ -147,8 +171,10 @@ begin
 		column => column,
 		gamestate => gameover,
 		birdpos => birdpos,
-		towerxpos => towerxpos,
-		towerypos => towerypos,
+		tower1xpos => tower1xpos,
+		tower1ypos => tower1ypos,
+		tower2xpos => tower2xpos,
+		tower2ypos => tower2ypos,
 		rgb => rgb
 	);
 	
@@ -164,9 +190,12 @@ begin
 	port map (
 		startbutton => leds(4),
 		birdpos => birdpos,
-		towerxpos => towerxpos,
-		towerypos => towerypos,
-		gameover => gameover
+		tower1xpos => tower1xpos,
+		tower1ypos => tower1ypos,
+		tower2xpos => tower2xpos,
+		tower2ypos => tower2ypos,
+		gameover => gameover,
+		update => gameclk
 		);
 		
 	
