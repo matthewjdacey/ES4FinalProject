@@ -48,22 +48,23 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Sun Dec  3 15:10:43 2023
+Mapped on: Tue Dec  5 00:42:11 2023
 
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
 Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc
-     Z:/es4/ES4FinalProject/FINALPROJECT/constraint.pdc -o
+     Z:/es4/FINALPROJECT/FINALPROJECT/constraint.pdc -o
      FINALPROJECT_impl_1_map.udb -mp FINALPROJECT_impl_1.mrp -hierrpt -gui
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of slice registers: 101 out of  5280 (2%)
+   Number of slice registers: 120 out of  5280 (2%)
    Number of I/O registers:      1 out of   117 (1%)
-   Number of LUT4s:           294 out of  5280 (6%)
-      Number of logic LUT4s:             118
-      Number of inserted feedthru LUT4s:  18
-      Number of ripple logic:             79 (158 LUT4s)
+   Number of LUT4s:           351 out of  5280 (7%)
+      Number of logic LUT4s:             157
+      Number of inserted feedthru LUT4s:  28
+      Number of replicated LUT4s:          2
+      Number of ripple logic:             82 (164 LUT4s)
    Number of IO sites used:   21 out of 39 (54%)
       Number of IO sites used for general PIO: 21
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -73,7 +74,7 @@ Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
       Number of IO sites used for PIO+I3C+OD+RGB: 21 out of 39 (54%)
-   Number of DSPs:             0 out of 8 (0%)
+   Number of DSPs:             1 out of 8 (12%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
@@ -86,7 +87,7 @@ Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  5
-      Net VSYNC_c: 35 loads, 35 rising, 0 falling (Driver: Pin
+      Net VSYNC_c: 55 loads, 55 rising, 0 falling (Driver: Pin
      vga_1.VSYNC_c_I_0/Q)
       Net vga_clk: 15 loads, 15 rising, 0 falling (Driver: Pin
      mypll_1.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
@@ -94,28 +95,28 @@ Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc
       Net nes_1.clk: 9 loads, 9 rising, 0 falling (Driver: Pin nes_1.osc/CLKHF)
       Net nes_clk_c: 8 loads, 8 rising, 0 falling (Driver: Pin
      nes_1.nes_clk_c_I_0/Z)
-   Number of Clock Enables:  3
+   Number of Clock Enables:  2
       Net VCC_net: 1 loads, 0 SLICEs
-      Net gravity_1.velocity_5__N_157: 6 loads, 6 SLICEs
       Net vga_1.column_0__N_49: 6 loads, 6 SLICEs
-   Number of LSRs:  5
+   Number of LSRs:  6
 
-      Net gravity_1.velocity_5__N_158: 6 loads, 6 SLICEs
+      Net gravity_1.was_jump_N_188: 8 loads, 8 SLICEs
+      Net gravity_1.velocity_5__N_137: 3 loads, 3 SLICEs
+      Net s: 16 loads, 16 SLICEs
+      Net vga_1.valid_N_185: 1 loads, 1 SLICEs
       Net vga_1.column_0__N_49: 6 loads, 6 SLICEs
-      Net vga_1.valid_N_186: 1 loads, 1 SLICEs
       Net vga_1.column_0__N_50: 6 loads, 6 SLICEs
-      Net tower_1.towerxpos_1__N_68: 5 loads, 5 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net VCC_net: 41 loads
+      Net VCC_net: 42 loads
+      Net s: 16 loads
       Net vga_1.column_0__N_49: 13 loads
       Net nes_latch_c: 9 loads
-      Net tower_1.towerxpos_1__N_68: 9 loads
       Net column[5]: 8 loads
-      Net column[6]: 8 loads
       Net column[7]: 8 loads
       Net column[8]: 8 loads
       Net column[9]: 8 loads
-      Net tower_1.counter[9]: 8 loads
+      Net gravity_1.n5: 8 loads
+      Net gravity_1.n6: 8 loads
 
 
 
@@ -128,8 +129,8 @@ Command line:   map -i FINALPROJECT_impl_1_syn.udb -pdc
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
 
-WARNING &lt;1026001&gt; - map: Z:/es4/ES4FinalProject/FINALPROJECT/constraint.pdc (11)
-     : No port matched &apos;button&apos;.
+WARNING &lt;1026001&gt; - map: Z:/es4/FINALPROJECT/FINALPROJECT/constraint.pdc (11) :
+     No port matched &apos;button&apos;.
 WARNING &lt;1027013&gt; - map: No port matched &apos;button&apos;.
 WARNING &lt;1014301&gt; - map: Can&apos;t resolve object &apos;button&apos; in constraint
      &apos;ldc_set_location -site {9} [get_ports button]&apos;.
@@ -159,8 +160,8 @@ WARNING &lt;1011001&gt; - map: Remove invalid constraint &apos;ldc_set_location 
 | leds[4]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | leds[5]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 
++---------------------+-----------+-----------+-------+-------+-----------+
 | leds[6]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | leds[7]             | OUTPUT    |           |       |       |           |
@@ -220,8 +221,8 @@ PLL 1:                                 Pin/Node Value
   PLLOUT_SELECT_PORTA:                          GENCLK
   PLLOUT_SELECT_PORTB:                          GENCLK
   SHIFTREG_DIV_MODE:                            0
-  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
 
+  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
   FDA_RELATIVE:                                 0
   FEEDBACK_PATH:                                SIMPLE
   DELAY_ADJUSTMENT_MODE_FEEDBACK:               FIXED
@@ -245,6 +246,8 @@ OSC 1:                                 Pin/Node Value
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 ---------------
 
+Instance Name: gravity_1/mult_365
+         Type: DSP
 Instance Name: vga_1/HSYNC_c_I_0
          Type: IOLOGIC
 Instance Name: mypll_1/lscc_pll_inst/u_PLL_B
@@ -267,10 +270,7 @@ Instance Name: nes_1/osc
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 60 MB
-
-
-
+   Peak Memory Usage: 61 MB
 
 
 

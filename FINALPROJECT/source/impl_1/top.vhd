@@ -21,6 +21,7 @@ architecture synth of top is
 	component tower is 
 		port(
 			update : in std_logic;
+			gamestate : in std_logic;
 			towerxpos : out unsigned(9 downto 0);
 			towerypos : out unsigned(9 downto 0)
 		);
@@ -32,6 +33,7 @@ architecture synth of top is
 		update: in std_logic;
 		reset: in std_logic;
 		jump: in std_logic;
+		gamestate : in std_logic;
 		position: out unsigned(9 downto 0)
 	);
 	end component;
@@ -66,11 +68,22 @@ architecture synth of top is
 	  );
 	end component;
 	
+	component gamestate is 
+	port(
+		startbutton : in std_logic;
+		birdpos : in unsigned (9 downto 0);
+		towerxpos : in unsigned (9 downto 0);
+		towerypos : in unsigned (9 downto 0);
+		gameover : out std_logic
+		);
+	end component;
+	
 	component pattern_gen is
 		port(
 			valid : in std_logic;
 			row : in unsigned(9 downto 0);
 			column : in unsigned(9 downto 0);
+			gamestate : in std_logic;
 			birdpos : in unsigned(9 downto 0);
 			towerxpos : in unsigned(9 downto 0);
 			towerypos :in unsigned(9 downto 0);
@@ -85,9 +98,9 @@ architecture synth of top is
 	signal valid : std_logic;
 	signal row : unsigned (9 downto 0);
 	signal column : unsigned (9 downto 0);
+	signal gameover : std_logic := '1';
 	signal towerxpos : unsigned (9 downto 0) := "1010110010";
 	signal towerypos : unsigned (9 downto 0 ) := "0011001000";
-	
 	signal birdpos : unsigned(9 downto 0);
 	
 begin
@@ -114,13 +127,15 @@ begin
 	port map(
 		update => gameclk,
 		reset => '0',
-		jump => '0',
+		jump => leds(7),
+		gamestate => gameover,
 		position => birdpos
 	);
 		
 	tower_1 : tower
 	port map(
 		update => gameclk,
+		gamestate => gameover,
 		towerxpos => towerxpos,
 		towerypos => towerypos
 	);
@@ -130,6 +145,7 @@ begin
 		valid => valid,
 		row => row,
 		column => column,
+		gamestate => gameover,
 		birdpos => birdpos,
 		towerxpos => towerxpos,
 		towerypos => towerypos,
@@ -143,5 +159,15 @@ begin
 		NES_Clock => nes_clk,
 		output=>leds
 	);
+	
+	gamestate_1 : gamestate
+	port map (
+		startbutton => leds(4),
+		birdpos => birdpos,
+		towerxpos => towerxpos,
+		towerypos => towerypos,
+		gameover => gameover
+		);
+		
 	
 end;
