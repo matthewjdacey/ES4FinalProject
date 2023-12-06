@@ -1,0 +1,15 @@
+#Start recording tcl command: 12/5/2023 18:45:49
+#Project Location: Z:/es4/newfinal; Project name: newfinal
+prj_create -name "newfinal" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_add_source "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/gamestate.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/gravity.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/nes.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/pattern_gen.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/top.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/tower.vhd" "Z:/es4/ES4FinalProject/FINALPROJECT/source/impl_1/vga.vhd"
+prj_save 
+prj_set_strategy_value -strategy Strategy1 syn_vhdl2008=True
+prj_set_strategy_value -strategy Strategy1 lse_vhdl2008=True
+prj_add_source "Z:/es4/newfinal/mypll/mypll.ipx"
+prj_add_source "Z:/es4/newfinal/map.pdc"
+prj_enable_source "Z:/es4/newfinal/map.pdc"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+#Stop recording: 12/5/2023 19:09:07

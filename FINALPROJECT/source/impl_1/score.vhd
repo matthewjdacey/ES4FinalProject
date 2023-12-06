@@ -21,7 +21,7 @@ signal s : state := DEAD;
 signal scoresig : unsigned (9 downto 0) := 10d"0";
 
 begin 
-	
+
 	s <= ALIVE when gamestate = '0' else DEAD;
 	score <= scoresig;
 	process(update) is begin
@@ -30,7 +30,7 @@ begin
 						-- reset score to zero when first tower is moving and other towers aren't (on game start)
 						10d"0" when (tower1xpos /= 690 and tower2xpos = 690 and tower3xpos = 690) else
 						scoresig;
-						
+
 		end if;
 	end process;
 end architecture;

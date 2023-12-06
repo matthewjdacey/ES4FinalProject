@@ -1,36 +1,3 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2023.1.0.43.3
-Wed Dec  6 14:15:30 2023
+Wed Dec  6 10:26:29 2023
 
-WARNING <71003020> - Top module port 'clk' does not connect to anything.
-WARNING <71003020> - Top module port 'output_freq' does not connect to anything.
-WARNING <71003020> - Top module port 'HSYNC' does not connect to anything.
-WARNING <71003020> - Top module port 'VSYNC' does not connect to anything.
-WARNING <71003020> - Top module port 'rgb[5]' does not connect to anything.
-WARNING <71003020> - Top module port 'rgb[4]' does not connect to anything.
-WARNING <71003020> - Top module port 'rgb[3]' does not connect to anything.
-WARNING <71003020> - Top module port 'rgb[2]' does not connect to anything.
-WARNING <71003020> - Top module port 'rgb[1]' does not connect to anything.
-WARNING <71003020> - Top module port 'rgb[0]' does not connect to anything.
-WARNING <71003020> - Top module port 'nes_data' does not connect to anything.
-WARNING <71003020> - Top module port 'nes_latch' does not connect to anything.
-WARNING <71003020> - Top module port 'nes_clk' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[7]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[6]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[5]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[4]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[3]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[2]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[1]' does not connect to anything.
-WARNING <71003020> - Top module port 'leds[0]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[9]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[8]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[7]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[6]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[5]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[4]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[3]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[2]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[1]' does not connect to anything.
-WARNING <71003020> - Top module port 'scoreout[0]' does not connect to anything.
-WARNING <1027013> - No port matched 'button'.
-WARNING <1014301> - Can't resolve object 'button' in constraint 'ldc_set_location -site {9} [get_ports button]'.

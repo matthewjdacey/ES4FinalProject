@@ -1,0 +1,137 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  206 of 5280 (3.902%)
+I/O cells:      31
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2       180          100.0
+                            FD1P3XZ       206          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         2          100.0
+                              IOL_B         1          100.0
+                               LUT4       487          100.0
+                              MAC16         1          100.0
+                                 OB        29          100.0
+                              PLL_B         1          100.0
+SUB MODULES
+                          gamestate         1
+                            gravity         1
+                              jumbo         1
+                              mypll         1
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                                nes         1
+                        pattern_gen         1
+                              score         1
+                              tower         1
+               tower(towerstart=46)         1
+               tower(towerstart=92)         1
+                                vga         1
+                              TOTAL       920
+----------------------------------------------------------------------
+Report for cell nes.v1
+Instance Path : nes_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         9            5.0
+                            FD1P3XZ        25           12.1
+                               LUT4        13            2.7
+                              TOTAL        47
+----------------------------------------------------------------------
+Report for cell vga.v1
+Instance Path : vga_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        12            6.7
+                            FD1P3XZ        22           10.7
+                              IOL_B         1          100.0
+                               LUT4        28            5.7
+                              TOTAL        63
+----------------------------------------------------------------------
+Report for cell mypll.v1
+Instance Path : mypll_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+SUB MODULES
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000").v1
+Instance Path : mypll_1.lscc_pll_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell tower(towerstart=46).v1
+Instance Path : tower_2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        29           16.1
+                            FD1P3XZ        26           12.6
+                               LUT4        24            4.9
+                              TOTAL        79
+----------------------------------------------------------------------
+Report for cell tower(towerstart=92).v1
+Instance Path : tower_3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        29           16.1
+                            FD1P3XZ        27           13.1
+                               LUT4        25            5.1
+                              TOTAL        81
+----------------------------------------------------------------------
+Report for cell tower.v1
+Instance Path : tower_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        25           13.9
+                            FD1P3XZ        20            9.7
+                               LUT4        21            4.3
+                              TOTAL        66
+----------------------------------------------------------------------
+Report for cell pattern_gen.v1
+Instance Path : pattern_gen_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        53           29.4
+                            FD1P3XZ        20            9.7
+                               LUT4       267           54.8
+SUB MODULES
+                              jumbo         1
+                              TOTAL       341
+----------------------------------------------------------------------
+Report for cell jumbo.v1
+Instance Path : pattern_gen_1.player
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         4            1.9
+                               LUT4       127           26.1
+                              TOTAL       131
+----------------------------------------------------------------------
+Report for cell score.v1
+Instance Path : score_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         6            3.3
+                            FD1P3XZ        10            4.9
+                               LUT4        14            2.9
+                              TOTAL        30
+----------------------------------------------------------------------
+Report for cell gamestate.v1
+Instance Path : gamestate_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         1            0.5
+                               LUT4        76           15.6
+                              TOTAL        77
+----------------------------------------------------------------------
+Report for cell gravity.v1
+Instance Path : gravity_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        17            9.4
+                            FD1P3XZ        55           26.7
+                               LUT4        19            3.9
+                              MAC16         1          100.0
+                              TOTAL        92
