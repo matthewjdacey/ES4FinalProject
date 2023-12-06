@@ -62,7 +62,7 @@ begin
 				xpos <= 10d"690";
 				startcount <= startcount + 1;
 			else
-				xpos <= xpos - 10d"4";
+				xpos <= xpos - 10d"5";
 			end if;
 			
 			if (xpos = 10d"690") then

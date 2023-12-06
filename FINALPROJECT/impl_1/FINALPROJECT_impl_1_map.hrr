@@ -4,31 +4,34 @@ Report for cell top
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                  IOLGC	       1.00        100.0
-                                  LUT4	        351        100.0
-                               LUTGATE	        187        100.0
-                                LUTCCU	        164        100.0
+                                  LUT4	        760        100.0
+                               LUTGATE	        394        100.0
+                                LUTCCU	        366        100.0
                                  IOREG	          1        100.0
-                                 IOBUF	         21        100.0
-                                PFUREG	        120        100.0
+                                 IOBUF	         31        100.0
+                                PFUREG	        186        100.0
                                    DSP	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                             gamestate	          1         7.7
-                               gravity	          1        14.8
+                             gamestate	          1        10.4
+                               gravity	          1         6.8
                                  mypll	          1         0.0
-                                   nes	          1         8.8
-                           pattern_gen	          1        29.1
-                                 tower	          1        18.8
-                                   vga	          1        12.0
+                                   nes	          1         4.1
+                           pattern_gen	          1        32.8
+                                 score	          1         3.0
+                                 tower	          1         9.2
+                  tower(towerstart=46)	          1        10.8
+                  tower(towerstart=92)	          1        11.2
+                                   vga	          1         6.7
 ---------------------------------------------------
 Report for cell gravity
    Instance path: top/gravity_1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         52        14.8
-                               LUTGATE	         18         9.6
-                                LUTCCU	         34        20.7
-                                PFUREG	         54        45.0
+                                  LUT4	         52         6.8
+                               LUTGATE	         18         4.6
+                                LUTCCU	         34         9.3
+                                PFUREG	         55        29.6
                                    DSP	          1        100.0
 ---------------------------------------------------
 Report for cell vga
@@ -36,11 +39,19 @@ Report for cell vga
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                  IOLGC	       1.00        100.0
-                                  LUT4	         42        12.0
-                               LUTGATE	         18         9.6
-                                LUTCCU	         24        14.6
+                                  LUT4	         51         6.7
+                               LUTGATE	         27         6.9
+                                LUTCCU	         24         6.6
                                  IOREG	          1        100.0
-                                PFUREG	         22        18.3
+                                PFUREG	         22        11.8
+---------------------------------------------------
+Report for cell pattern_gen
+   Instance path: top/pattern_gen_1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        249        32.8
+                               LUTGATE	        137        34.8
+                                LUTCCU	        112        30.6
 ---------------------------------------------------
 Report for cell mypll
    Instance path: top/mypll_1
@@ -55,35 +66,55 @@ Report for cell mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1
                      Cell usage:
                                   cell	      count    Res Usage(%)
 ---------------------------------------------------
+Report for cell tower(towerstart=46)
+   Instance path: top/tower_2
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         82        10.8
+                               LUTGATE	         24         6.1
+                                LUTCCU	         58        15.8
+                                PFUREG	         26        14.0
+---------------------------------------------------
 Report for cell nes
    Instance path: top/nes_1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         31         8.8
-                               LUTGATE	         13         7.0
-                                LUTCCU	         18        11.0
-                                PFUREG	         25        20.8
+                                  LUT4	         31         4.1
+                               LUTGATE	         13         3.3
+                                LUTCCU	         18         4.9
+                                PFUREG	         25        13.4
+---------------------------------------------------
+Report for cell score
+   Instance path: top/score_1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         23         3.0
+                               LUTGATE	         11         2.8
+                                LUTCCU	         12         3.3
+                                PFUREG	         10         5.4
+---------------------------------------------------
+Report for cell tower(towerstart=92)
+   Instance path: top/tower_3
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         85        11.2
+                               LUTGATE	         27         6.9
+                                LUTCCU	         58        15.8
+                                PFUREG	         27        14.5
 ---------------------------------------------------
 Report for cell tower
    Instance path: top/tower_1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         66        18.8
-                               LUTGATE	         18         9.6
-                                LUTCCU	         48        29.3
-                                PFUREG	         19        15.8
+                                  LUT4	         70         9.2
+                               LUTGATE	         20         5.1
+                                LUTCCU	         50        13.7
+                                PFUREG	         20        10.8
 ---------------------------------------------------
 Report for cell gamestate
    Instance path: top/gamestate_1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         27         7.7
-                               LUTGATE	         27        14.4
----------------------------------------------------
-Report for cell pattern_gen
-   Instance path: top/pattern_gen_1
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	        102        29.1
-                               LUTGATE	         62        33.2
-                                LUTCCU	         40        24.4
+                                  LUT4	         79        10.4
+                               LUTGATE	         79        20.1
+                                PFUREG	          1         0.5

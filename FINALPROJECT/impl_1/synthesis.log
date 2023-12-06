@@ -5,10 +5,10 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Dec  5 00:42:07 2023
+Wed Dec  6 14:35:40 2023
 
 
-Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f FINALPROJECT_impl_1_lattice.synproj -gui -msgset Z:/es4/FINALPROJECT/FINALPROJECT/promote.xml 
+Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f FINALPROJECT_impl_1_lattice.synproj -gui -msgset Z:/es4/FINALPROJECT/promote.xml 
 
 Synthesis options:
 The -a option is iCE40UP.
@@ -71,28 +71,30 @@ The -syn option is FALSE.
 -vh2008
 
 -path C:/lscc/radiant/2023.1/ispfpga/ice40tp/data (searchpath added)
--path Z:/es4/FINALPROJECT/FINALPROJECT (searchpath added)
--path Z:/es4/FINALPROJECT/FINALPROJECT/impl_1 (searchpath added)
--path Z:/es4/FINALPROJECT/FINALPROJECT/mypll (searchpath added)
+-path Z:/es4/FINALPROJECT (searchpath added)
+-path Z:/es4/FINALPROJECT/impl_1 (searchpath added)
+-path Z:/es4/FINALPROJECT/mypll (searchpath added)
 Mixed language design
 Verilog design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v
-Verilog design file = Z:/es4/FINALPROJECT/FINALPROJECT/mypll/rtl/mypll.v
+Verilog design file = Z:/es4/FINALPROJECT/mypll/rtl/mypll.v
 VHDL library = pmi
 VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/gravity.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/gravity.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/pattern_gen.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/pattern_gen.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/top.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/top.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/vga.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/vga.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/tower.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/tower.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/nes.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/nes.vhd
 VHDL library = work
-VHDL design file = Z:/es4/FINALPROJECT/FINALPROJECT/source/impl_1/gamestate.vhd
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/gamestate.vhd
+VHDL library = work
+VHDL design file = Z:/es4/FINALPROJECT/source/impl_1/score.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
@@ -141,47 +143,52 @@ INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp_be.v(49): 
 INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v. VERI-1328
 INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
 INFO <35901328> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_dsp.v. VERI-1328
-Analyzing Verilog file z:/es4/finalproject/finalproject/mypll/rtl/mypll.v. VERI-1482
+Analyzing Verilog file z:/es4/finalproject/mypll/rtl/mypll.v. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/gravity.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/gravity.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd(6): analyzing entity gravity. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/gravity.vhd(16): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/gravity.vhd(6): analyzing entity gravity. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/gravity.vhd(16): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/pattern_gen.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/pattern_gen.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd(5): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/pattern_gen.vhd(20): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/top.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/top.vhd
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/pattern_gen.vhd(5): analyzing entity pattern_gen. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/pattern_gen.vhd(28): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/top.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/top.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/top.vhd(5): analyzing entity top. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/top.vhd(19): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/vga.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/vga.vhd
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/top.vhd(5): analyzing entity top. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/top.vhd(20): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/vga.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/vga.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/vga.vhd(5): analyzing entity vga. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/vga.vhd(17): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/tower.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/tower.vhd
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/vga.vhd(5): analyzing entity vga. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/vga.vhd(17): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/tower.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/tower.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/tower.vhd(5): analyzing entity tower. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/tower.vhd(14): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/nes.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/nes.vhd
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/tower.vhd(5): analyzing entity tower. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/tower.vhd(17): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/nes.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/nes.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/nes.vhd(5): analyzing entity nes. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/nes.vhd(14): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/nes.vhd(5): analyzing entity nes. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/nes.vhd(14): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/gamestate.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/gamestate.vhd
 
-INFO <35921012> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd(5): analyzing entity gamestate. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/finalproject/finalproject/source/impl_1/gamestate.vhd(15): analyzing architecture synth. VHDL-1010
-INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/es4/FINALPROJECT/FINALPROJECT/impl_1". VHDL-1504
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/gamestate.vhd(5): analyzing entity gamestate. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/gamestate.vhd(20): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/score.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/finalproject/source/impl_1/score.vhd
+
+INFO <35921012> - synthesis: z:/es4/finalproject/source/impl_1/score.vhd(5): analyzing entity score. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/finalproject/source/impl_1/score.vhd(17): analyzing architecture synth. VHDL-1010
+INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/es4/FINALPROJECT/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
@@ -213,26 +220,9 @@ Top module name (VHDL, mixed language): top
 WARNING <35001771> - synthesis: Initial value found on net HSYNC will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net VSYNC will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net gameover will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerxpos[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net towerypos[0] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net s will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net s will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net s will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net shiftReg2[7] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net shiftReg2[6] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net shiftReg2[5] will be ignored due to unrecognized driver type
@@ -241,11 +231,12 @@ WARNING <35001771> - synthesis: Initial value found on net shiftReg2[3] will be 
 WARNING <35001771> - synthesis: Initial value found on net shiftReg2[2] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net shiftReg2[1] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net shiftReg2[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net state will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net s will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net nextstate will be ignored due to unrecognized driver type
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
-WARNING <35931002> - synthesis: z:/es4/finalproject/finalproject/mypll/rtl/mypll.v(139): net \mypll_1/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
-WARNING <35931002> - synthesis: z:/es4/finalproject/finalproject/mypll/rtl/mypll.v(140): net \mypll_1/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+WARNING <35931002> - synthesis: z:/es4/finalproject/mypll/rtl/mypll.v(139): net \mypll_1/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
+WARNING <35931002> - synthesis: z:/es4/finalproject/mypll/rtl/mypll.v(140): net \mypll_1/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
 ######## Missing driver on net \mypll_1/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \mypll_1/lscc_pll_inst/sdi_i. Patching with GND.
 
@@ -255,9 +246,7 @@ Mapped 1 multiplier(s)
 
 
 CRITICAL <35001747> - synthesis: Bit 0 of Register \gravity_1/dt is stuck at Zero
-WARNING <35935040> - synthesis: Register \gravity_1/pos_162_192__i1 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \tower_1/xpos_164__i0 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \tower_1/xpos_164__i1 clock is stuck at One. VDB-5040
+WARNING <35935040> - synthesis: Register \gravity_1/pos_348_383__i1 clock is stuck at Zero. VDB-5040
 Combinational loop found : 1
 
  Net leds_c_7 
@@ -272,55 +261,45 @@ Combinational loop found : 2
 
 Combinational loop found : 3
 
- Net gameover 
-
- Instance \gamestate_1/i19 
-
- Net \gamestate_1/n2 
-
- Instance \gamestate_1/i4 
-
-Combinational loop found : 4
-
  Net leds_c_0 
 
  Instance \nes_1/mux_12_i1 
 
-Combinational loop found : 5
+Combinational loop found : 4
 
  Net leds_c_1 
 
  Instance \nes_1/mux_12_i2 
 
-Combinational loop found : 6
+Combinational loop found : 5
 
  Net leds_c_2 
 
  Instance \nes_1/mux_12_i3 
 
-Combinational loop found : 7
+Combinational loop found : 6
 
  Net leds_c_3 
 
  Instance \nes_1/mux_12_i4 
 
-Combinational loop found : 8
+Combinational loop found : 7
 
  Net leds_c_5 
 
  Instance \nes_1/mux_12_i6 
 
-Combinational loop found : 9
+Combinational loop found : 8
 
  Net leds_c_6 
 
  Instance \nes_1/mux_12_i7 
 
 WARNING <35935040> - synthesis: Register \gravity_1/velocity_i0 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \gravity_1/velocity_i1 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - synthesis: Register \gravity_1/velocity_i2 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - synthesis: Register \gravity_1/velocity_i3 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - synthesis: Register \gravity_1/velocity_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \gravity_1/velocity_i1 clock is stuck at Zero. VDB-5040
 WARNING <35001779> - synthesis: Initial value found on instance \gravity_1/was_jump will be ignored.
 WARNING <35001779> - synthesis: Initial value found on instance \gravity_1/velocity_i15 will be ignored.
 WARNING <35001779> - synthesis: Initial value found on instance \gravity_1/velocity_i14 will be ignored.
@@ -332,19 +311,19 @@ WARNING <35001779> - synthesis: Initial value found on instance \gravity_1/veloc
 INFO <35002039> - synthesis: Special Primitives IFD1P3AZ and OFD1P3AZ for ThunderPlus are synthesized using IOL_B.
 
 ################### Begin Area Report (top)######################
-Number of register bits => 120 of 5280 (2 % )
-CCU2 => 82
-FD1P3XZ => 120
+Number of register bits => 186 of 5280 (3 % )
+CCU2 => 183
+FD1P3XZ => 186
 HSOSC_CORE => 1
 IB => 2
 IOL_B => 1
-LUT4 => 156
+LUT4 => 364
 MAC16 => 1
-OB => 19
+OB => 29
 PLL_B => 1
 ################### End Area Report ##################
-Number of odd-length carry chains : 5
-Number of even-length carry chains : 9
+Number of odd-length carry chains : 11
+Number of even-length carry chains : 23
 
 ################### Begin Clock Report ######################
 Clock Nets
@@ -358,21 +337,21 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : tower_1/s, loads : 28
+  Net : gravity_1/s, loads : 21
   Net : vga_1/column_0__N_49, loads : 21
   Net : nes_1/clk, loads : 17
-  Net : vga_1/column_0__N_50, loads : 10
-  Net : nes_1/nes_latch_c, loads : 8
-  Net : gravity_1/n6, loads : 8
-  Net : gravity_1/n5, loads : 8
-  Net : gravity_1/was_jump_N_188, loads : 8
-  Net : tower_1/counter[9], loads : 8
-  Net : vga_1/row[8], loads : 7
+  Net : vga_1/column[9], loads : 14
+  Net : vga_1/column[5], loads : 14
+  Net : vga_1/column[6], loads : 12
+  Net : vga_1/column[4], loads : 12
+  Net : vga_1/column[3], loads : 12
+  Net : vga_1/column[2], loads : 12
+  Net : vga_1/column[1], loads : 12
 ################### End Clock Report ##################
 
-Peak Memory Usage: 127 MB
+Peak Memory Usage: 135 MB
 
 --------------------------------------------------------------
 Total CPU Time: 0 secs 
-Total REAL Time: 3 secs 
+Total REAL Time: 5 secs 
 --------------------------------------------------------------

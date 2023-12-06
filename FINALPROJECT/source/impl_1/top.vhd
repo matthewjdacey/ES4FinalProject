@@ -12,12 +12,24 @@ entity top is
 		nes_data : in std_logic;
 		nes_latch : out std_logic;
 		nes_clk : out std_logic;
-		leds : out std_logic_vector(7 downto 0)
+		leds : out std_logic_vector(7 downto 0);
+		scoreout : out std_logic_vector(9 downto 0)
 	);
 end top;
 
 architecture synth of top is
-
+	
+	component score is 
+		port(
+			gamestate : in std_logic;
+			update : in std_logic;
+			tower1xpos : in unsigned (9 downto 0);
+			tower2xpos : in unsigned (9 downto 0);
+			tower3xpos : in unsigned (9 downto 0);
+			score : out unsigned (9 downto 0)
+			);
+	end component;
+	
 	component tower is
 		generic(
 			towerstart : integer := 0
@@ -80,6 +92,8 @@ architecture synth of top is
 		tower1ypos : in unsigned (9 downto 0);
 		tower2xpos : in unsigned (9 downto 0);
 		tower2ypos : in unsigned (9 downto 0);
+		tower3xpos : unsigned (9 downto 0);
+		tower3ypos : unsigned (9 downto 0);
 		gameover : out std_logic
 		);
 	end component;
@@ -98,6 +112,11 @@ architecture synth of top is
 			tower2xpos : in unsigned(9 downto 0);
 			tower2ypos : in unsigned(9 downto 0);
 			
+			tower3xpos : unsigned (9 downto 0);
+			tower3ypos : unsigned (9 downto 0);
+			
+			score : in unsigned (9 downto 0); 
+			
 			rgb : out std_logic_vector(5 downto 0)
 		);
 	end component;
@@ -114,10 +133,17 @@ architecture synth of top is
 	signal tower1ypos : unsigned (9 downto 0 );
 	signal tower2xpos : unsigned (9 downto 0);
 	signal tower2ypos : unsigned (9 downto 0);
+	signal tower3xpos : unsigned (9 downto 0);
+	signal tower3ypos : unsigned (9 downto 0);
 	
 	signal birdpos : unsigned(9 downto 0);
+	signal gamescore : unsigned(9 downto 0);
 	
 begin
+
+	scoreout <= std_logic_vector(gamescore);
+	
+	
 	mypll_1 : mypll
 	port map(
 		ref_clk_i => clk,
@@ -156,12 +182,21 @@ begin
 	);
 	
 	tower_2 : tower
-	generic map (towerstart => 20)
+	generic map (towerstart => 46)
 	port map(
 		update => gameclk,
 		gamestate => gameover,
 		towerxpos => tower2xpos,
 		towerypos => tower2ypos
+	);
+	
+	tower_3 : tower
+	generic map (towerstart => 92)
+	port map(
+		update => gameclk,
+		gamestate => gameover,
+		towerxpos => tower3xpos,
+		towerypos => tower3ypos
 	);
 	
 	pattern_gen_1 : pattern_gen 
@@ -175,6 +210,9 @@ begin
 		tower1ypos => tower1ypos,
 		tower2xpos => tower2xpos,
 		tower2ypos => tower2ypos,
+		tower3xpos => tower3xpos,
+		tower3ypos => tower3ypos,
+		score => gamescore,
 		rgb => rgb
 	);
 	
@@ -186,6 +224,16 @@ begin
 		output=>leds
 	);
 	
+	score_1 : score
+	port map(
+		gamestate => gameover,
+		update => gameclk,
+		tower1xpos => tower1xpos,
+		tower2xpos => tower2xpos,
+		tower3xpos => tower3xpos,
+		score => gamescore
+	);
+	
 	gamestate_1 : gamestate
 	port map (
 		update => gameclk,
@@ -195,6 +243,8 @@ begin
 		tower1ypos => tower1ypos,
 		tower2xpos => tower2xpos,
 		tower2ypos => tower2ypos,
+		tower3xpos => tower3xpos,
+		tower3ypos => tower3ypos,
 		gameover => gameover
 		);
 		
