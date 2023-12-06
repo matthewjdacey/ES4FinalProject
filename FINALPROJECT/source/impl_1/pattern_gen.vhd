@@ -10,8 +10,11 @@ entity pattern_gen is
 		gamestate : in std_logic;
 		
 		birdpos : in unsigned(9 downto 0);
-		towerxpos : in unsigned(9 downto 0);
-		towerypos : in unsigned(9 downto 0);
+		tower1xpos : in unsigned(9 downto 0);
+		tower1ypos : in unsigned(9 downto 0);
+		
+		tower2xpos : in unsigned(9 downto 0);
+		tower2ypos : in unsigned(9 downto 0);
 		
 		rgb : out std_logic_vector(5 downto 0)
 	);
@@ -26,6 +29,7 @@ begin
 		   -- bird position
 		   "111111" when (row > 295 and row < 345) and column > birdpos and column < (birdpos + 50) else
 		   -- tower position
-		   "111111" when (((row < towerxpos and (row > (towerxpos - 50))) and towerxpos >= 50) or (row < towerxpos and towerxpos < 50)) and (column < towerypos or column > (towerypos + 150)) else
+		   "111111" when (((row < tower1xpos and (row > (tower1xpos - 50))) and tower1xpos >= 50) or (row < tower1xpos and tower1xpos < 50)) and (column < tower1ypos or column > (tower1ypos + 150)) else
+		   "111111" when (((row < tower2xpos and (row > (tower2xpos - 50))) and tower2xpos >= 50) or (row < tower2xpos and tower2xpos < 50)) and (column < tower2ypos or column > (tower2ypos + 150)) else
 		   "000000";
 end;

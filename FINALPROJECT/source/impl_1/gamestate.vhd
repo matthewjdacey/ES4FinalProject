@@ -4,27 +4,40 @@ use IEEE.numeric_std.all;
 
 entity gamestate is 
 	port(
+		update : in std_logic;
 		startbutton : in std_logic;
 		birdpos : in unsigned (9 downto 0);
-		towerxpos : in unsigned (9 downto 0);
-		towerypos : in unsigned (9 downto 0);
+		tower1xpos : in unsigned (9 downto 0);
+		tower1ypos : in unsigned (9 downto 0);
+		tower2xpos : in unsigned (9 downto 0);
+		tower2ypos : in unsigned (9 downto 0);
 		gameover : out std_logic
 		);
 end gamestate;
 
-architecture synth of gamestate is 
+architecture synth of gamestate is
 
-signal state : std_logic := '1';
+type States is (ALIVE, DEAD);
+signal state, nextstate : States := DEAD;
 
 begin
-	gameover <= state;
+	gameover <= '1' when state = DEAD else '0';
 	
-	-- start playing the game when on game over screen and start button is pressed
-	state <= '0' when state = '1' and startbutton = '1' else
+	process(update) begin
+        if rising_edge(update) then
+                state <= nextstate;
+        end if;
+	end process;
 	
-	-- stop playing when game is not over and tower x position overlaps bird position and bird hitbox collides w/ top or bottom of tower or ground
-	'1' when state = '0' and (birdpos > 430 or birdpos < 0 or ((towerxpos > 295 and towerxpos < 395) and (birdpos + 50 > towerypos + 150 or birdpos < towerypos))) else
-	-- keep state the same	
-	state;
+	process(all) begin
+	-- TODO: add collision testing here
+	case state is
+			when DEAD => nextstate <= ALIVE when startbutton = '1' else DEAD;
+			when ALIVE => nextstate <= DEAD when (birdpos > 430 or birdpos < 0 or ((tower1xpos > 295 and tower1xpos < 395) and (birdpos + 50 > tower1ypos + 150 or birdpos < tower1ypos)))
+				else DEAD when (birdpos > 430 or birdpos < 0 or ((tower2xpos > 295 and tower2xpos < 395) and (birdpos + 50 > tower2ypos + 150 or birdpos < tower2ypos)))
+				else ALIVE;
+			when others => nextstate <= state;
+	end case;
+	end process;
 	
 end;
