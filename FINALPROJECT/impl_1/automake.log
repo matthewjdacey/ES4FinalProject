@@ -1,8 +1,8 @@
 
-tmcheck -par "newfinal_impl_1.par" 
+tmcheck -par "FINALPROJECT_impl_1.par" 
 
-bitgen -w "newfinal_impl_1.udb" -f "newfinal_impl_1.t2b" 
-Loading newfinal_impl_1.udb ...
+bitgen -w "FINALPROJECT_impl_1.udb" -f "FINALPROJECT_impl_1.t2b" 
+Loading FINALPROJECT_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
 Performance Hardware Data Status:   Advanced       Version 1.0.
@@ -38,21 +38,21 @@ Preference Summary:
 
 
 Creating bit map...
-Saving bit stream in "Z:\es4\newfinal\impl_1\newfinal_impl_1.bin".
+Saving bit stream in "Z:\es4\FINALPROJECT\impl_1\FINALPROJECT_impl_1.bin".
     <postMsg mid="1081100" type="Info" dynamic="1" navigation="0" arg0="Bitstream authenticated."  />
 Bitstream generation complete!
 
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 119 MB
+Peak Memory Usage: 141 MB
 
 
-ibisgen "newfinal_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
+ibisgen "FINALPROJECT_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Wed Dec  6 15:13:57 2023
+Wed Dec  6 20:51:13 2023
 
-Loading newfinal_impl_1.udb ...
+Loading FINALPROJECT_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
 Performance Hardware Data Status:   Advanced       Version 1.0.
@@ -69,12 +69,12 @@ Successfully loading design udb and device data from disks and to up-layer in CP
 Created design models.
 
 
-Generating: Z:\es4\newfinal\impl_1\IBIS\newfinal_impl_1.ibs
+Generating: Z:\es4\FINALPROJECT\impl_1\IBIS\FINALPROJECT_impl_1.ibs
 
 
     <postMsg mid="1191031" type="Info" dynamic="0" navigation="0"  />
 
-backanno "newfinal_impl_1.udb"  -o "newfinal_impl_1_vo.vo"      -sp "High-Performance_1.2V"  -w -neg
+backanno "FINALPROJECT_impl_1.udb"  -o "FINALPROJECT_impl_1_vo.vo"      -sp "High-Performance_1.2V"  -w -neg
 backanno: version Radiant Software (64-bit) 2023.1.0.43.3
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -94,11 +94,11 @@ Performance Hardware Data Status:   Advanced       Version 1.0.
 
 
 
-Writing a verilog netlist based on the newfinal_impl_1 design file.
+Writing a verilog netlist based on the FINALPROJECT_impl_1 design file.
 
-Writing Verilog netlist to file newfinal_impl_1_vo.vo
-Writing SDF timing to file newfinal_impl_1_vo.sdf
+Writing Verilog netlist to file FINALPROJECT_impl_1_vo.vo
+Writing SDF timing to file FINALPROJECT_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 109 MB
+Total CPU Time: 1 secs 
+Total REAL Time: 4 secs 
+Peak Memory Usage: 166 MB

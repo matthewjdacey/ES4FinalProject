@@ -13,12 +13,13 @@ entity top is
 		nes_latch : out std_logic;
 		nes_clk : out std_logic;
 		leds : out std_logic_vector(7 downto 0);
+		tens : out std_logic_vector(4 downto 0); 
 		scoreout : out std_logic_vector(9 downto 0)
 	);
 end top;
 
 architecture synth of top is
-	
+
 	component score is 
 		port(
 			gamestate : in std_logic;
@@ -29,7 +30,7 @@ architecture synth of top is
 			score : out unsigned (9 downto 0)
 			);
 	end component;
-	
+
 	component tower is
 		generic(
 			towerstart : integer := 0
@@ -79,7 +80,8 @@ architecture synth of top is
 	    data : in std_logic;
 	    NES_Latch   : out std_logic;
 	    NES_Clock   : out std_logic;
-	    output : out std_logic_vector(7 downto 0)
+	    output : out std_logic_vector(7 downto 0);
+		clk : in std_logic
 	  );
 	end component;
 	
@@ -100,6 +102,7 @@ architecture synth of top is
 	
 	component pattern_gen is
 		port(
+			clk : in std_logic;
 			valid : in std_logic;
 			row : in unsigned(9 downto 0);
 			column : in unsigned(9 downto 0);
@@ -114,11 +117,22 @@ architecture synth of top is
 			
 			tower3xpos : unsigned (9 downto 0);
 			tower3ypos : unsigned (9 downto 0);
-			
+
 			score : in unsigned (9 downto 0); 
+			
+			tens : out std_logic_vector(4 downto 0); 
 			
 			rgb : out std_logic_vector(5 downto 0)
 		);
+	end component;
+	
+	component HSOSC is
+	generic (CLKHF_DIV : String := "0b00");
+	port(
+		CLKHFPU : in std_logic := 'X';
+		CLKHFEN : in std_logic := 'X';
+		CLKHF : out std_logic := 'X'
+	);
 	end component;
 	
 	signal gameclk : std_logic;
@@ -137,13 +151,14 @@ architecture synth of top is
 	signal tower3ypos : unsigned (9 downto 0);
 	
 	signal birdpos : unsigned(9 downto 0);
+	signal clkhf : std_logic;
 	signal gamescore : unsigned(9 downto 0);
 	
 begin
-
+    osc : HSOSC port map (CLKHFPU => '1', CLKHFEN => '1', CLKHF => clkhf);
 	scoreout <= std_logic_vector(gamescore);
-	
-	
+
+
 	mypll_1 : mypll
 	port map(
 		ref_clk_i => clk,
@@ -201,6 +216,7 @@ begin
 	
 	pattern_gen_1 : pattern_gen 
 	port map(
+		clk => vga_clk,
 		valid => valid,
 		row => row,
 		column => column,
@@ -213,6 +229,7 @@ begin
 		tower3xpos => tower3xpos,
 		tower3ypos => tower3ypos,
 		score => gamescore,
+		tens => tens,
 		rgb => rgb
 	);
 	
@@ -221,17 +238,8 @@ begin
 		data => nes_data,
 		NES_Latch => nes_latch,
 		NES_Clock => nes_clk,
-		output=>leds
-	);
-	
-	score_1 : score
-	port map(
-		gamestate => gameover,
-		update => gameclk,
-		tower1xpos => tower1xpos,
-		tower2xpos => tower2xpos,
-		tower3xpos => tower3xpos,
-		score => gamescore
+		output=>leds,
+		clk => clkhf
 	);
 	
 	gamestate_1 : gamestate
@@ -247,6 +255,16 @@ begin
 		tower3ypos => tower3ypos,
 		gameover => gameover
 		);
+		
+	score_1 : score
+	port map(
+		gamestate => gameover,
+		update => gameclk,
+		tower1xpos => tower1xpos,
+		tower2xpos => tower2xpos,
+		tower3xpos => tower3xpos,
+		score => gamescore
+	);
 		
 	
 end;

@@ -1,12 +1,12 @@
 <top name = "top"  library = "work"  arch = "RTL"  entry = "VHDL">
 
 <clocks>
-    <clockitem name = "clk"  type = "port" />
-    <clockitem name = "output_freq"  type = "net" />
     <clockitem name = "vga_clk"  type = "net" />
+    <clockitem name = "output_freq"  type = "net" />
+    <clockitem name = "clk"  type = "port" />
     <clockitem name = "VSYNC"  type = "net" />
     <clockitem name = "nes_clk"  type = "net" />
-    <clockitem name = "nes_1/clk"  type = "net" />
+    <clockitem name = "clkhf"  type = "net" />
     <clockitem name = "mypll_1/lscc_pll_inst/outcoreb_o"  type = "net" />
     <clockitem name = "mypll_1/lscc_pll_inst/outglobalb_o"  type = "net" />
 </clocks>

@@ -7,7 +7,8 @@ entity nes is
     data : in std_logic;
     NES_Latch   : out std_logic;
     NES_Clock   : out std_logic;
-    output : out std_logic_vector(7 downto 0)
+    output : out std_logic_vector(7 downto 0);
+	clk : in std_logic
   );
 end nes;
 
@@ -17,22 +18,11 @@ architecture synth of nes is
   signal NEScount : unsigned(7 downto 0);
   signal shiftReg :  std_logic_vector(7 downto 0) := (others => '0');
   signal shiftReg2 : std_logic_vector(7 downto 0) := (others => '0');
-
-	component HSOSC is
-	generic (CLKHF_DIV : String := "0b00");
-	port(
-		CLKHFPU : in std_logic := 'X';
-		CLKHFEN : in std_logic := 'X';
-		CLKHF : out std_logic := 'X'
-	);
-	end component;
 	
-	signal clk : std_logic;
 	signal output_clk : std_logic;
 	signal latch : std_logic;
 
 begin
-  osc : HSOSC port map (CLKHFPU => '1', CLKHFEN => '1', CLKHF => clk);
 
   process(clk)
   begin

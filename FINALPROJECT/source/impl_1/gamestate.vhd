@@ -35,9 +35,9 @@ begin
 	-- TODO: add collision testing here
 	case state is
 			when DEAD => nextstate <= ALIVE when startbutton = '1' else DEAD;
-			when ALIVE => nextstate <= DEAD when (birdpos > 420 or birdpos < 0 or ((tower1xpos > 295 and tower1xpos < 395) and (birdpos + 50 > tower1ypos + 150 or birdpos < tower1ypos)))
-				else DEAD when (birdpos > 420 or birdpos < 0 or ((tower2xpos > 295 and tower2xpos < 395) and (birdpos + 50 > tower2ypos + 150 or birdpos < tower2ypos)))
-				else DEAD when (birdpos > 420 or birdpos < 0 or ((tower3xpos > 295 and tower3xpos < 395) and (birdpos + 50 > tower3ypos + 150 or birdpos < tower3ypos)))
+			when ALIVE => nextstate <= DEAD when (birdpos > 430 or birdpos < 0 or ((tower1xpos > 300 and tower1xpos < 395) and (birdpos + 26 > tower1ypos + 150 or birdpos < tower1ypos)))
+				else DEAD when (birdpos > 430 or birdpos < 0 or ((tower2xpos > 300 and tower2xpos < 395) and (birdpos + 26 > tower2ypos + 150 or birdpos < tower2ypos)))
+				else DEAD when (birdpos > 430 or birdpos < 0 or ((tower3xpos > 300 and tower3xpos < 395) and (birdpos + 26 > tower3ypos + 150 or birdpos < tower3ypos)))
 				else ALIVE;
 			when others => nextstate <= state;
 	end case;
